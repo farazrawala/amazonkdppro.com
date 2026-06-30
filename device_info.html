@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Device Info</title>
+</head>
+<body>
+  <h2>Device & Browser Info</h2>
+  <pre id="info"></pre>
+
+  <script>
+    function getDeviceInfo() {
+      const info = {
+        // Browser
+        userAgent: navigator.userAgent,
+        appName: navigator.appName,
+        appVersion: navigator.appVersion,
+        platform: navigator.platform,
+        language: navigator.language,
+        languages: navigator.languages,
+        cookieEnabled: navigator.cookieEnabled,
+        online: navigator.onLine,
+
+        // Screen
+        screenWidth: screen.width,
+        screenHeight: screen.height,
+        availWidth: screen.availWidth,
+        availHeight: screen.availHeight,
+        colorDepth: screen.colorDepth,
+        pixelDepth: screen.pixelDepth,
+
+        // Window
+        innerWidth: window.innerWidth,
+        innerHeight: window.innerHeight,
+        outerWidth: window.outerWidth,
+        outerHeight: window.outerHeight,
+        devicePixelRatio: window.devicePixelRatio,
+
+        // Timezone & Locale
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        timezoneOffsetMinutes: new Date().getTimezoneOffset(),
+
+        // Hardware (approx)
+        cpuCores: navigator.hardwareConcurrency || 'N/A',
+        memoryGB: navigator.deviceMemory || 'N/A',
+        maxTouchPoints: navigator.maxTouchPoints || 0,
+
+        // Referrer & URL
+        referrer: document.referrer,
+        currentURL: location.href,
+
+        // Browser features
+        doNotTrack: navigator.doNotTrack,
+        javaEnabled: navigator.javaEnabled ? navigator.javaEnabled() : 'N/A',
+        pdfViewerEnabled: navigator.pdfViewerEnabled ?? 'Unknown',
+
+        // Performance
+        connection: (navigator.connection) ? {
+          effectiveType: navigator.connection.effectiveType,
+          downlink: navigator.connection.downlink,
+          rtt: navigator.connection.rtt,
+          saveData: navigator.connection.saveData
+        } : 'Not available',
+
+        // GPU Info (basic)
+        gpu: (() => {
+          try {
+            const canvas = document.createElement('canvas');
+            const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+            if (!gl) return 'WebGL not supported';
+            const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+            return debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : 'Unavailable';
+          } catch (e) {
+            return 'Error retrieving GPU info';
+          }
+        })(),
+
+        // Fingerprint (simple hash)
+        fingerprint: (() => {
+          const str = navigator.userAgent + screen.width + screen.height + navigator.language;
+          let hash = 0;
+          for (let i = 0; i < str.length; i++) {
+            hash = ((hash << 5) - hash) + str.charCodeAt(i);
+            hash |= 0;
+          }
+          return 'fp-' + Math.abs(hash);
+        })()
+      };
+
+      return info;
+    }
+
+    const info = getDeviceInfo();
+    document.getElementById('info').textContent = JSON.stringify(info, null, 2);
+  </script>
+</body>
+</html>

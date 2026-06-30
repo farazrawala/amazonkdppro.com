@@ -1,0 +1,16 @@
+ul.tabs.wc-tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+ul.tabs.wc-tabs li {
+    background:white;
+    padding:1rem;
+}
+
+ul.tabs.wc-tabs li.active a {
+    color:red;
+}

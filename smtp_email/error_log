@@ -1,0 +1,28 @@
+[10-Sep-2025 21:27:34 UTC] PHP Fatal error:  Uncaught Error: Class "PHPMailer\PHPMailer\PHPMailer" not found in /home/designteller/amazonkdpexperts.com/smtp_email/form_submission.php:96
+Stack trace:
+#0 {main}
+  thrown in /home/designteller/amazonkdpexperts.com/smtp_email/form_submission.php on line 96
+[10-Sep-2025 21:27:47 UTC] PHP Fatal error:  Uncaught Error: Class "PHPMailer\PHPMailer\PHPMailer" not found in /home/designteller/amazonkdpexperts.com/smtp_email/form_submission.php:96
+Stack trace:
+#0 {main}
+  thrown in /home/designteller/amazonkdpexperts.com/smtp_email/form_submission.php on line 96
+[10-Sep-2025 21:28:48 UTC] PHP Fatal error:  Uncaught Error: Class "PHPMailer\PHPMailer\PHPMailer" not found in /home/designteller/amazonkdpexperts.com/smtp_email/form_submission.php:96
+Stack trace:
+#0 {main}
+  thrown in /home/designteller/amazonkdpexperts.com/smtp_email/form_submission.php on line 96
+[10-Sep-2025 21:28:49 UTC] PHP Fatal error:  Uncaught Error: Class "PHPMailer\PHPMailer\PHPMailer" not found in /home/designteller/amazonkdpexperts.com/smtp_email/form_submission.php:96
+Stack trace:
+#0 {main}
+  thrown in /home/designteller/amazonkdpexperts.com/smtp_email/form_submission.php on line 96
+[10-Sep-2025 21:28:56 UTC] PHP Fatal error:  Uncaught Error: Class "PHPMailer\PHPMailer\PHPMailer" not found in /home/designteller/amazonkdpexperts.com/smtp_email/form_submission.php:96
+Stack trace:
+#0 {main}
+  thrown in /home/designteller/amazonkdpexperts.com/smtp_email/form_submission.php on line 96
+[10-Sep-2025 21:29:06 UTC] PHP Fatal error:  Uncaught Error: Class "PHPMailer\PHPMailer\PHPMailer" not found in /home/designteller/amazonkdpexperts.com/smtp_email/form_submission.php:96
+Stack trace:
+#0 {main}
+  thrown in /home/designteller/amazonkdpexperts.com/smtp_email/form_submission.php on line 96
+[10-Sep-2025 21:31:36 UTC] PHP Fatal error:  Uncaught Error: Class "PHPMailer\PHPMailer\PHPMailer" not found in /home/designteller/amazonkdpexperts.com/smtp_email/form_submission.php:96
+Stack trace:
+#0 {main}
+  thrown in /home/designteller/amazonkdpexperts.com/smtp_email/form_submission.php on line 96
