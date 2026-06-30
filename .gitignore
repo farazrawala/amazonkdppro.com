@@ -1,0 +1,8 @@
+# Ignore vendor folder
+vendor/
+
+# Ignore smtp folder
+smtp/
+
+# Ignore smtp/vendor folder (if needed)
+smtp/vendor/
