@@ -129,8 +129,8 @@
                         <div class="col-md-6">
                            <div class="formwrp">
                               <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Path-973.svg">
-                              <form method="post">
-                                 <input type="hidden" name="ip" value="110.93.236.214">
+                              <form method="post" class="form_submission">
+                                 <input type="hidden" name="ip" value=" <?php echo $_SERVER['REMOTE_ADDR']; ?> ">
                                  <input type="hidden" name="city" value="">
                                  <input type="hidden" name="region" value="">
                                  <input type="hidden" name="country" value="">
@@ -1232,8 +1232,8 @@
                         <h2 class="main-heading">Fill Out The Below Form</h2>
                         <p class="main-pera">Join the ranks of successful authors who have trusted us with their literary creations.</p>
                         <div>
-                           <form method="post">
-                              <input type="hidden" name="ip" value="110.93.236.214">
+                           <form class="form_submission" method="post">
+                              <input type="hidden" name="ip" value=" <?php echo $_SERVER['REMOTE_ADDR']; ?> ">
                               <input type="hidden" name="city" value="">
                               <input type="hidden" name="region" value="">
                               <input type="hidden" name="country" value="">
@@ -1326,7 +1326,7 @@
                   </button>
                </div>
                <div class="modal-body formwrp">
-                  <form class="" action="https://amazonkdppro.com/publishing-experts/index.php" method="post">
+                  <form class="form_submission" method="post">
                      <h2>Lets Get Started</h2>
                      <p>For inquiries or assistance, kindly fill out our contact form. We’ll promptly address your concerns. Thank you for reaching out.</p>
                      <div class="row justify-content-center">
