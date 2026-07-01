@@ -114,7 +114,7 @@
                                  
                                  
                                  <div class="lablewrp">
-                                    <input class="form-control" type="text" name="name"  placeholder="Your Name" required=""value="">
+                                    <input class="form-control" type="text" name="name"  placeholder="Your Name" required="" value="">
                                  </div>
                                  <div class="lablewrp">
                                     <input   class="form-control" type="text" name="phone" minlength="10" maxlength="15" placeholder="Your Phone" value="" required="required">
@@ -1221,7 +1221,7 @@
                               <input type="hidden" name="subject" value="Pop Up Form (https://amazonkdppro.com/publishing-experts/)">
                               <div class="row">
                                  <div class="col-md-6">
-                                    <input class="form-control mb-3" type="text" name="name"  placeholder="Your Name" required=""value="">
+                                    <input class="form-control mb-3" type="text" name="name"  placeholder="Your Name" required="" value="">
                                     <input class="form-control mb-3" type="email"  name="email" placeholder="Your Email" value="" required="required">
                                     <!-- <label class="field-txt">Budget <span>*</span></label> -->
                                     <input class="form-control mb-3" type="text" name="phone" min="10" maxlength="15" placeholder="Your Phone" value="" required="required">
@@ -1319,7 +1319,7 @@
                            <input type="hidden" name="subject" value="Pop Up Form (https://amazonkdppro.com/publishing-experts/)">
                         </div>
                         <div class="form-group  col-md-12 ">
-                           <input class="form-control mb-3" type="text" name="name"  placeholder="Your Name" required=""value="">
+                           <input class="form-control mb-3" type="text" name="name"  placeholder="Your Name" required="" value="">
                            <input class="form-control mb-3" type="email"  name="email" placeholder="Your Email" value="" required="required">
                            <input class="form-control mb-3" type="text" name="phone" minlength="10" maxlength="15" placeholder="Your Phone" value="" required="required">
                         </div>
@@ -1339,6 +1339,7 @@
       <script src="assets/js/lazyload.min.js"></script>
       <script src="../js/jquery.validate.min.js"></script>
       <?php include '../include/chat-code.php'; ?>
+      <?php include '../include/chat-code-script.php'; ?>
       <script>
          $(function() {
            var myLazyLoad = new LazyLoad({

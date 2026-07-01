@@ -55,7 +55,7 @@ $(document).ready(function () {
   jQuery.validator.addMethod(
     "lettersonly",
     function (e, n) {
-      return this.optional(n) || /^[a-zA-Z\s]+$/i.test(e);
+      return this.optional(n) || /^[a-zA-Z\s'\-]+$/i.test(e);
     },
     "Invalid Value"
   );
@@ -70,7 +70,16 @@ $(document).ready(function () {
           phone: { required: !0 },
           message: { required: false },
         },
+        invalidHandler: function (event, validator) {
+          $(this).find(".success").hide();
+          $(this)
+            .find(".error")
+            .html(validator.errorList[0].message)
+            .show();
+        },
         submitHandler: function (e) {
+          $(e).find(".error").hide();
+          $(e).find(".success").hide();
           var t = {},
             n = $(e).find("[data-name]");
           if (0 !== n.length) {
@@ -161,10 +170,12 @@ $(document).ready(function () {
               }
             },
             error: function (t, n, i) {
+              $(e).find(".success").hide();
               $(e)
                 .find(".error")
-                .html("Error Occurred " + i),
-                $(e).find(".loader").hide();
+                .html("Error Occurred " + i)
+                .show();
+              $(e).find(".loader").hide();
               if (typeof e == "string") {
                 createToast("error___", e);
               } else {
