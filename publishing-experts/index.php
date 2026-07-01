@@ -29,33 +29,7 @@
       <link rel="preconnect" href="https://fonts.googleapis.com/">
       <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&amp;display=optional"  rel="stylesheet" rel="preload" as="style">
-      <script type="text/javascript">
-         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-         (function () {
-            var s1 = document.createElement("script"),
-               s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/68cb3f80ba858d1923b11d9c/1j5cv03ql';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-         })();
-         
-         // // Wait for the widget to load, then hide it initially
-         // Tawk_API.onLoad = function () {
-         //    Tawk_API.hideWidget();
-         // };
-         
-         // Add event listener for the "CHAT NOW" button
-         document.addEventListener("DOMContentLoaded", function () {
-            var chatButton = document.querySelector(".btn-talk.chat");
-            if (chatButton) {
-               chatButton.addEventListener("click", function () {
-                  Tawk_API.maximize(); // Open the chat popup
-               });
-            }
-         });
-      </script>
+     
    </head>
    <body class="hompg">
       <header>
