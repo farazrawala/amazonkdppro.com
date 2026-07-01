@@ -63,7 +63,7 @@ define('CONTACT_EMAIL_HREF', 'mailto:info@amazonkdppro.com');
 define('ADDRESS', '5900 Balcones Dr, Austin, TX 78731, USA');
 define('ADDRESS_Two', '5900 Balcones Dr, Austin, TX 78731, USA');
 // define('ADDRESS_HREF', 'https://goo.gl/maps/u8eoXL99pw7bfwhN7');
-define('WEBSITE_NAME', 'Self Publishing');
+define('WEBSITE_NAME', 'Amazon KDP Pro');
 define('WEBSITE_URL', 'www.amazonkdppro.com');
 define('WEBSITE_LOGO', 'https://www.amazonkdppro.com/images/logo.png');
 

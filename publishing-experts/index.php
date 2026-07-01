@@ -1272,8 +1272,8 @@
                                  <li>
                                     <h4>UNITED STATES</h4>
                                  </li>
-                                 <li><i class="fa fa-phone"></i> <a href="tel:+1(833) 257-2502">(833) 257-2502</a> </li>
-                                 <li><i class="fa fa-map-marker"></i> <a href="javascript:;">1910 Pacific Ave Ste 16800 #125 Dallas, TX 75201</a> </li>
+                                 <li><i class="fa fa-phone"></i> <a href="<?php echo PHONE_HREF ?>"><?php echo PHONE ?></a> </li>
+                                 <li><i class="fa fa-map-marker"></i> <a href="javascript:;"><?php echo ADDRESS ?></a> </li>
                               </ul>
                            </div>
                         </div>
@@ -1358,6 +1358,7 @@
       <script src="assets/js/mlib.js"></script> 
       <script src="assets/js/functions.js" async></script>
       <script src="assets/js/lazyload.min.js"></script>
+      <?php include '../include/chat-code-script.php'; ?>
       <script>
          $(function() {
            var myLazyLoad = new LazyLoad({
