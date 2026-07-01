@@ -2,7 +2,8 @@
 vendor/
 
 # Ignore smtp folder
-smtp/
+smtp/  
+smtp_email/  
 
 # Ignore smtp/vendor folder (if needed)
 smtp/vendor/
