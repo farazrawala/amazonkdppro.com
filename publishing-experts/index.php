@@ -1364,7 +1364,7 @@
       <script src="assets/js/functions.js" async></script>
       <script src="assets/js/lazyload.min.js"></script>
       <script src="../js/jquery.validate.min.js"></script>
-      <?php include '../include/chat-code-script.php'; ?>
+      <?php include '../include/chat-code.php'; ?>
       <script>
          $(function() {
            var myLazyLoad = new LazyLoad({
