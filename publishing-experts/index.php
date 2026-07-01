@@ -152,6 +152,11 @@
                                     <textarea class="form-control mb-3" autocomplete="nope" name="message" placeholder="Enter Brief" rows="3"></textarea>
                                  </div>
                                  <Button  type="submit" name="cta1" value="Submit Now" class="submt-btn">Submit</button>
+                                 <div class="error mt-3 alert alert-danger text-left mb-0" style="display: none"></div>
+                                 <div class="success mt-3 alert alert-success text-left mb-0" style="display: none"></div>
+                                 <div class="loader" style="display: none">
+                                    <img alt="loader" src="../loader.gif">
+                                 </div>
                               </form>
                            </div>
                         </div>
@@ -1358,6 +1363,7 @@
       <script src="assets/js/mlib.js"></script> 
       <script src="assets/js/functions.js" async></script>
       <script src="assets/js/lazyload.min.js"></script>
+      <script src="../js/jquery.validate.min.js"></script>
       <?php include '../include/chat-code-script.php'; ?>
       <script>
          $(function() {
