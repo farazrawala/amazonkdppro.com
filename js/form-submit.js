@@ -1,13 +1,20 @@
 var scriptElement = document.currentScript;
+var scriptSrc = scriptElement ? scriptElement.src : "";
 
-// Get the src attribute (filename) of the script
-var scriptSrc = scriptElement.src;
+if (!scriptSrc) {
+  var formSubmitScripts = document.querySelectorAll('script[src*="form-submit.js"]');
+  if (formSubmitScripts.length) {
+    scriptSrc = formSubmitScripts[formSubmitScripts.length - 1].src;
+  }
+}
 
-// Extract variables from the filename
-var filename = scriptSrc.split("/").pop(); // Get the filename from the path
-var parts = filename.split("brand="); // Assuming variables are separated by underscores
+// Site base URL from where this script was loaded (works in subfolders on localhost)
+var siteBaseUrl = scriptSrc.split("/js/form-submit.js")[0] || window.location.origin;
 
-const BrandID = parts[1];
+// Extract brand id from query string
+var filename = scriptSrc.split("/").pop();
+var parts = filename.split("brand=");
+const BrandID = parts[1] ? parts[1].split("&")[0] : "";
 
 const notifications = document.querySelector(".design_notifications_toaster");
 const toastDetails = {
@@ -61,7 +68,7 @@ $(document).ready(function () {
           name: { required: !0, lettersonly: !0 },
           email: { email: !0, required: !0 },
           phone: { required: !0 },
-          message: { required: !0 },
+          message: { required: false },
         },
         submitHandler: function (e) {
           var t = {},
@@ -88,7 +95,7 @@ $(document).ready(function () {
             (title = $(e).find('[name="title"]').val()),
             (tk = "9" + Math.floor(Math.random() * 9999999999 + 1000000000));
 
-          var myurl = window.location.origin;
+          var myurl = siteBaseUrl;
           var URL = myurl + "/form/submit.php?brand_key=" + BrandID;
           var Domain_url = myurl + "/";
 
