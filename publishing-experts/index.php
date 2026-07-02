@@ -21,7 +21,7 @@ require_once "../include/config.php";
    <link rel="stylesheet" rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <!--<link rel="stylesheet" rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.min.css"  />   --->
    <link rel="preload" fetchpriority="high" as="image" href="../images/logo.png" type="image/webp">
-   
+
    <link rel="preload" fetchpriority="high" as="image" href="assets/images/sticker-1.png" type="image/png">
    <link rel="preload" fetchpriority="high" as="image" href="assets/images/sticker-2.png" type="image/png">
    <link rel="preload" fetchpriority="high" as="image" href="assets/images/sticker-3.png" type="image/png">

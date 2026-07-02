@@ -35,7 +35,7 @@ $('.testiwrprslider').slick({
   ],
 });
 
-$('.portsliderrr').slick({
+var portSliderConfig = {
   dots: !0,
   arrows: !1,
   infinite: !0,
@@ -43,7 +43,33 @@ $('.portsliderrr').slick({
   slidesToShow: 4,
   autoplay: !1,
   adaptiveHeight: !0,
-});
+};
+
+function loadLazyImages($scope) {
+  $scope.find('img.lazy').each(function () {
+    var src = this.getAttribute('data-src');
+    if (src && this.getAttribute('src') !== src) {
+      this.setAttribute('src', src);
+    }
+  });
+}
+
+// Initialize (or reposition) the portfolio slider inside a tab panel.
+// Sliders are initialized lazily, the first time their tab becomes visible,
+// so slick can measure the real (non-zero) width.
+function activatePortSlider($panel) {
+  var $slider = $panel.find('.portsliderrr');
+  if (!$slider.length) return;
+  loadLazyImages($slider);
+  if ($slider.hasClass('slick-initialized')) {
+    $slider.slick('setPosition');
+  } else {
+    $slider.slick(portSliderConfig);
+  }
+}
+
+// Only the tab visible on load can be measured correctly, so init just that one.
+activatePortSlider($('.tabs.current'));
 
 $('.portslider').slick({
   dots: !0,
@@ -73,20 +99,10 @@ $('[data-targetit]').on('click', function () {
   var $panel = $('.' + e);
   $panel.siblings('[class^="tabs"]').removeClass('current');
   $panel.addClass('current');
-  $(".slick-slider").slick("setPosition", 0)
-  // Lazy images inside a hidden tab never loaded, so the slides are empty.
-  // Force them to load now that the tab is visible.
-  $panel.find('img.lazy').each(function () {
-    var src = this.getAttribute('data-src');
-    if (src && this.getAttribute('src') !== src) {
-      this.setAttribute('src', src);
-    }
-  });
-
-  // The slider was initialized while this tab was hidden (0 width). Recalculate
-  // its layout after the browser applies the now-visible dimensions.
+  // Init the slider the first time this tab opens (or reposition it if already
+  // initialized), now that the panel is visible and has a real width.
   window.requestAnimationFrame(function () {
-    $panel.find('.slick-slider').slick('setPosition');
+    activatePortSlider($panel);
   });
 });
 
