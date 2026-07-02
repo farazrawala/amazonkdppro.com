@@ -8,181 +8,124 @@ if (!scriptSrc) {
   }
 }
 
-// Site base URL from where this script was loaded (works in subfolders on localhost)
 var siteBaseUrl = scriptSrc.split("/js/form-submit.js")[0] || window.location.origin;
 
-// Extract brand id from query string
 var filename = scriptSrc.split("/").pop();
 var parts = filename.split("brand=");
 const BrandID = parts[1] ? parts[1].split("&")[0] : "";
 
-const notifications = document.querySelector(".design_notifications_toaster");
-const toastDetails = {
-  timer: 3000,
-  success: {
-    icon: "fa-circle-check",
-  },
-  error: {
-    icon: "fa-circle-xmark",
-  },
-  warning: {
-    icon: "fa-triangle-exclamation",
-  },
-  info: {
-    icon: "fa-circle-info",
-  },
-};
-const removeToast = (toast) => {
-  toast.classList.add("hide");
-  if (toast.timeoutId) clearTimeout(toast.timeoutId); // Clearing the timeout for the toast
-  setTimeout(() => toast.remove(), 3000); // Removing the toast after 500ms
-};
-const createToast = (id, msg) => {
-  const { icon, text } = toastDetails[id];
-  const toast = document.createElement("li"); // Creating a new 'li' element for the toast
-  toast.className = `toast ${id}`;
-  toast.innerHTML = `<div class="column">
-                         <i class="fa-solid ${icon}"></i>
-                         <span>${msg}</span>
-                      </div>
-                      <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>`;
-  // notifications.appendChild(toast); // Append the toast to the notification ul
-  toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
-};
-// Nofitication end.
+function sendFormAjax(formEl) {
+  var $form = $(formEl);
 
-$(document).ready(function () {
-  jQuery.validator.addMethod(
+  $form.find(".error").hide();
+  $form.find(".success").hide();
+  $form.find(".loader").show();
+
+  var optional = {};
+  var optionalFields = $form.find("[data-name]");
+  if (optionalFields.length) {
+    for (var i = 0; i < optionalFields.length; i++) {
+      optional[$(optionalFields[i]).attr("data-name")] = $(optionalFields[i]).val();
+    }
+  }
+
+  var data = {
+    name: $form.find('[name="name"]').val(),
+    email: $form.find('[name="email"]').val(),
+    phone: $form.find('[name="phone"]').val(),
+    message: $form.find('[name="message"]').val(),
+    url: window.location.href,
+    domain: window.location.origin,
+    details: $form.find('[name="title"]').val(),
+    subject: $form.find('[name="subject"]').val(),
+    source: window.location.href,
+    lead_url: window.location.origin,
+    optional: optional,
+    value: $form.find('[name="price"]').val(),
+    randomnum: "9" + Math.floor(Math.random() * 9999999999 + 1000000000),
+  };
+
+  var myurl = siteBaseUrl;
+  var Domain_url = myurl + "/";
+
+  $.ajax({
+    type: "GET",
+    url: myurl + "/smtp_email/form_submission.php",
+    dataType: "json",
+    data: data,
+    success: function (response) {
+      if (response && response.success) {
+        $form.find(".loader").hide();
+        $form.find(".error").hide();
+        $form.find(".success").html("Thank you! Redirecting...").show();
+        $form.trigger("reset");
+
+        setTimeout(function () {
+          window.location = Domain_url + "thankyou.php?" + new URLSearchParams(data).toString();
+        }, 1500);
+      } else {
+        $form.find(".loader").hide();
+        $form
+          .find(".error")
+          .html((response && response.message) || "Something went wrong. Please try again.")
+          .show();
+      }
+    },
+    error: function () {
+      $form.find(".success").hide();
+      $form.find(".error").html("Error Occurred. Please try again.").show();
+      $form.find(".loader").hide();
+    },
+  });
+}
+
+jQuery(function ($) {
+  if (typeof $.fn.validate !== "function") {
+    console.error("jQuery Validate is not loaded.");
+    return;
+  }
+
+  $.validator.addMethod(
     "lettersonly",
-    function (e, n) {
-      return this.optional(n) || /^[a-zA-Z\s'\-]+$/i.test(e);
+    function (value, element) {
+      return this.optional(element) || /^[a-zA-Z\s'\-]+$/i.test(value);
     },
     "Invalid Value"
   );
-}),
-  $(document).ready(function () {
-    // $("body").append("<ul class='design_notifications_toaster'></ul>");
-    $(".form_submission").each(function () {
-      var $form = $(this);
-      $form.find('button[type="button"]').on("click", function () {
-        $form.submit();
-      });
-      $form.validate({
-        rules: {
-          name: { required: !0, lettersonly: !0 },
-          email: { email: !0, required: !0 },
-          phone: { required: !0 },
-          message: { required: false },
-        },
-        invalidHandler: function (event, validator) {
-          $(this).find(".success").hide();
-          $(this)
-            .find(".error")
-            .html(validator.errorList[0].message)
-            .show();
-        },
-        submitHandler: function (e) {
-          $(e).find(".error").hide();
-          $(e).find(".success").hide();
-          var t = {},
-            n = $(e).find("[data-name]");
-          if (0 !== n.length) {
-            for (var i = 0; i < n.length; i++) {
-              t[$(n[i]).attr("data-name")] = $(n[i]).val();
-            }
-          }
-          console.log(e);
-          $(e).find(".loader").show();
-          var a = $(e).find('[name="name"]').val(),
-            o = $(e).find('[name="email"]').val(),
-            l = $(e).find('[name="phone"]').val(),
-            r = $(e).find('[name="message"]').val(),
-            s = window.location.href,
-            c = window.location.origin,
-            u = $(e).find('[name="subject"]').val();
-          so = window.location.href;
-          lead_url = window.location.origin;
-          value = $(e).find('[name="price"]').val();
-          (pt = $(e).find('[name="pkgtitle"]').val()),
-            (pc = $(e).find('[name="pkgctgry"]').val()),
-            (title = $(e).find('[name="title"]').val()),
-            (tk = "9" + Math.floor(Math.random() * 9999999999 + 1000000000));
 
-          var myurl = siteBaseUrl;
-          var URL = myurl + "/form/submit.php?brand_key=" + BrandID;
-          var Domain_url = myurl + "/";
+  $(".form_submission").each(function () {
+    var $form = $(this);
 
-          //   if (window.location.origin == "https://localhost") {
-          //     URL =
-          //       "http://localhost/brands/prestigebookpublishers.com_895962/form/submit.php?brand_key=" +
-          //       BrandID;
+    if ($form.data("formSubmitInit")) {
+      return;
+    }
+    $form.data("formSubmitInit", true);
 
-          //     Domain_url =
-          //       "http://localhost/brands/prestigebookpublishers.com_895962/";
-          //   }
+    $form.attr("action", "javascript:void(0)");
 
-          var data = {
-            name: a,
-            email: o,
-            phone: l,
-            message: r,
-            url: s,
-            domain: c,
-            details: title,
-            subject: u,
-            source: so,
-            lead_url,
-            optional: t,
-            value,
-            randomnum: tk,
-          };
+    $form.validate({
+      rules: {
+        name: { required: true, lettersonly: true },
+        email: { email: true, required: true },
+        phone: { required: true },
+        message: { required: false },
+      },
+      invalidHandler: function (event, validator) {
+        $(this).find(".success").hide();
+        $(this).find(".error").html(validator.errorList[0].message).show();
+      },
+    });
 
-          console.log("data", data);
+    $form.on("submit", function (event) {
+      event.preventDefault();
+      if ($form.valid()) {
+        sendFormAjax(this);
+      }
+    });
 
-          $.ajax({
-            type: "GET",
-            url: myurl + "/smtp_email/form_submission.php",
-            dataType: "json",
-            data,
-            success: function (t) {
-              var response = t;
-              var $form = $(e);
-
-              if (response && response.success) {
-                $form.find(".loader").hide();
-                $form.find(".error").hide();
-                $form
-                  .find(".success")
-                  .html("Thank you! Redirecting...")
-                  .show();
-                $form.trigger("reset");
-
-                setTimeout(function () {
-                  const params = new URLSearchParams(data).toString();
-                  window.location = Domain_url + "thankyou.php?" + params;
-                }, 1500);
-              } else {
-                $form.find(".loader").hide();
-                $form
-                  .find(".error")
-                  .html(
-                    (response && response.message) ||
-                      "Something went wrong. Please try again."
-                  )
-                  .show();
-              }
-            },
-            error: function (t, n, i) {
-              var $form = $(e);
-              $form.find(".success").hide();
-              $form
-                .find(".error")
-                .html("Error Occurred. Please try again.")
-                .show();
-              $form.find(".loader").hide();
-            },
-          });
-        },
-      });
+    $form.on("click", "button.submt-btn, button.btn-1, input[type='submit']", function (event) {
+      event.preventDefault();
+      $form.trigger("submit");
     });
   });
+});

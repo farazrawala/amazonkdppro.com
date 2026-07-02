@@ -1228,7 +1228,7 @@
                                  </div>
                                  <div class="col-md-6">
                                     <textarea class="form-control mb-3" autocomplete="nope" name="message" placeholder="Enter Brief" rows="3"></textarea>
-                                    <button class="btn-1 w-100" cite="Submit" data-hover="Submit" type="submit" name="cta1" value="Submit Now">Submit</button>
+                                    <button class="btn-1 w-100" cite="Submit" data-hover="Submit" type="button" name="cta1" value="Submit Now">Submit</button>
                                     <div class="error mt-3 alert alert-danger text-left mb-0" style="display: none"></div>
                                     <div class="success mt-3 alert alert-success text-left mb-0" style="display: none"></div>
                                     <div class="loader" style="display: none">
@@ -1330,7 +1330,7 @@
                         </div>
                         <div class="form-group  col-md-12 ">
                            <textarea class="form-control mb-3" autocomplete="nope" name="message" placeholder="Enter Brief" rows="3"></textarea>
-                           <button class="submt-btn" cite="Submit" data-hover="Submit" type="submit" name="cta1" value="Submit Now">Submit</button>
+                           <button class="submt-btn" cite="Submit" data-hover="Submit" type="button" name="cta1" value="Submit Now">Submit</button>
                            <div class="error mt-3 alert alert-danger text-left mb-0" style="display: none"></div>
                            <div class="success mt-3 alert alert-success text-left mb-0" style="display: none"></div>
                            <div class="loader" style="display: none">
