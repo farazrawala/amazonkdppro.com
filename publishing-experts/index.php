@@ -1350,51 +1350,7 @@ require_once "../include/config.php";
    <script src="assets/js/functions.js?<?php echo time(); ?>"></script>
    <script src="assets/js/lazyload.min.js?<?php echo time(); ?>"></script>
    <script src="<?php echo rtrim($actual_link, '/'); ?>/js/jquery.validate.min.js"></script>
-   <?php include '../include/chat-code.php'; ?>
-   <?php include '../include/chat-code-script.php'; ?>
-   <script>
-      $(function() {
-         var myLazyLoad = new LazyLoad({
-            elements_selector: ".lazy"
-            // load_delay: 300 //adjust according to use case
-         });
-      });
-      $(function() {
-         // Fallback for cached old form-submit.js: type="button" does not submit forms
-         $(document).on('click', '.form_submission button.submt-btn, .form_submission button.btn-1[name="cta1"]', function(e) {
-            var $form = $(this).closest('form.form_submission');
-            if (!$form.length || $form.data('formSubmitInit')) {
-               return;
-            }
-            e.preventDefault();
-            $form.trigger('submit');
-         });
-      });
-   </script>
-   <script>
-      setTimeout(function() {
-         if (window.jQuery && typeof jQuery.fn.modal === 'function') {
-            $('#popup_form1').modal('show');
-         }
-      }, 3000);
-   </script>
-   <style type="text/css">
-      :root {
-         --clr-1: 254, 205, 8;
-         --clr-2: 40, 63, 38;
-         --clr-3: 251, 235, 206;
-         --dark-color: 8, 21, 33;
-         --light-color: 250, 245, 233
-      }
-   </style>
-   <script>
-      $('input[name="phone"]').on('keypress', function(e) {
-         return e.metaKey ||
-            e.which <= 0 ||
-            e.which == 8 ||
-            /[0-9]/.test(String.fromCharCode(e.which));
-      })
-   </script>
+   
 </body>
 
 </html>

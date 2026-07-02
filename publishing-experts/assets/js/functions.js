@@ -1,3 +1,6 @@
+
+
+
 $(function () {
   (($.mCustomScrollbar.defaults.theme = 'light-1'),
     $('.list-scroll').mCustomScrollbar({
@@ -69,3 +72,11 @@ $('.portslider').slick({
     },
   ],
 });
+
+
+$(function() {
+    var myLazyLoad = new LazyLoad({
+       elements_selector: ".lazy"
+       // load_delay: 300 //adjust according to use case
+    });
+ });
