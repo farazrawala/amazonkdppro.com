@@ -10,9 +10,9 @@ require_once "../include/config.php";
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
-   <link href="assets/css/m-style.css?30-06-26_04:30:10" rel="stylesheet" rel="preload" as="style" type="text/css" />
-   <link href="assets/css/style.css?30-06-26_04:30:10" rel="stylesheet" rel="preload" as="style" type="text/css" />
-   <link href="assets/css/newcss.css?30-06-26_04:30:10" rel="stylesheet" rel="preload" as="style" type="text/css" />
+   <link href="assets/css/m-style.css?<?php echo time(); ?>" rel="stylesheet" rel="preload" as="style" type="text/css" />
+   <link href="assets/css/style.css?<?php echo time(); ?>" rel="stylesheet" rel="preload" as="style" type="text/css" />
+   <link href="assets/css/newcss.css?<?php echo time(); ?>" rel="stylesheet" rel="preload" as="style" type="text/css" />
    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
    <link rel="preconnect" href="https://cdn.jsdelivr.net">
