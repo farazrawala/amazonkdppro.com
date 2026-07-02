@@ -1,4 +1,4 @@
-<script src="<?php echo rtrim($actual_link, '/'); ?>/js/form-submit.js?<?= mt_rand() ?>&brand=843190"></script>
+<script src="<?php echo rtrim($actual_link, '/'); ?>/js/form-submit.js?v=<?php echo @filemtime(__DIR__ . '/../js/form-submit.js') ?: time(); ?>&brand=843190"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {

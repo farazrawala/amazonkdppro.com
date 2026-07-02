@@ -123,9 +123,11 @@ jQuery(function ($) {
       }
     });
 
-    $form.on("click", "button.submt-btn, button.btn-1, input[type='submit']", function (event) {
+    $form.on("click", "button.submt-btn, button.btn-1[name='cta1'], input[type='submit']", function (event) {
       event.preventDefault();
-      $form.trigger("submit");
+      if ($form.valid()) {
+        sendFormAjax($form[0]);
+      }
     });
   });
 });

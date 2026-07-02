@@ -1351,6 +1351,19 @@
       <?php include '../include/chat-code.php'; ?>
       <?php include '../include/chat-code-script.php'; ?>
       <script>
+         jQuery(function ($) {
+           // Fallback for cached old form-submit.js: type="button" does not submit forms
+           $(document).on('click', '.form_submission button.submt-btn, .form_submission button.btn-1[name="cta1"]', function (e) {
+             var $form = $(this).closest('form.form_submission');
+             if (!$form.length || $form.data('formSubmitInit')) {
+               return;
+             }
+             e.preventDefault();
+             $form.trigger('submit');
+           });
+         });
+      </script>
+      <script>
          $(function() {
            var myLazyLoad = new LazyLoad({
              elements_selector: ".lazy"
