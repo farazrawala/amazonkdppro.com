@@ -63,7 +63,11 @@ $(document).ready(function () {
   $(document).ready(function () {
     // $("body").append("<ul class='design_notifications_toaster'></ul>");
     $(".form_submission").each(function () {
-      $(this).validate({
+      var $form = $(this);
+      $form.find('button[type="button"]').on("click", function () {
+        $form.submit();
+      });
+      $form.validate({
         rules: {
           name: { required: !0, lettersonly: !0 },
           email: { email: !0, required: !0 },
@@ -141,49 +145,41 @@ $(document).ready(function () {
             dataType: "json",
             data,
             success: function (t) {
-              //   console.log("response__t", t);
-              //   return false;
               var response = t;
+              var $form = $(e);
 
-              // if (typeof response == "string") {
-              //   // createToast("error", errors[0]);
-              console.log("typeof___", typeof response);
-              console.log("response_direct___", response);
-              if (typeof response == "object") {
-                // response = JSON.parse(t);
-                console.log("response__", response);
-                $(".loader").hide();
-                $(".form_submission").trigger("reset");
+              if (response && response.success) {
+                $form.find(".loader").hide();
+                $form.find(".error").hide();
+                $form
+                  .find(".success")
+                  .html("Thank you! Redirecting...")
+                  .show();
+                $form.trigger("reset");
 
-                createToast(
-                  "success",
-                  "Thank you for filling out your information!"
-                );
                 setTimeout(function () {
                   const params = new URLSearchParams(data).toString();
-
-                  console.log(Domain_url + "thankyou.php?");
                   window.location = Domain_url + "thankyou.php?" + params;
-                }, 3000);
-
-                // response__
+                }, 1500);
+              } else {
+                $form.find(".loader").hide();
+                $form
+                  .find(".error")
+                  .html(
+                    (response && response.message) ||
+                      "Something went wrong. Please try again."
+                  )
+                  .show();
               }
             },
             error: function (t, n, i) {
-              $(e).find(".success").hide();
-              $(e)
+              var $form = $(e);
+              $form.find(".success").hide();
+              $form
                 .find(".error")
-                .html("Error Occurred " + i)
+                .html("Error Occurred. Please try again.")
                 .show();
-              $(e).find(".loader").hide();
-              if (typeof e == "string") {
-                createToast("error___", e);
-              } else {
-                var errArr = Object.entries(e);
-                console.log("t____1", errArr);
-                // createToast("error", errArr[0][1]);
-                // console.log("type", typeof errArr);
-              }
+              $form.find(".loader").hide();
             },
           });
         },

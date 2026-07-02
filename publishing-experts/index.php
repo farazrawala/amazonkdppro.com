@@ -103,7 +103,7 @@
                         <div class="col-md-6">
                            <div class="formwrp">
                               <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Path-973.svg">
-                              <form method="post" class="form_submission">
+                              <form method="post" class="form_submission" novalidate>
                                  <input type="hidden" name="ip" value=" <?php echo $_SERVER['REMOTE_ADDR']; ?> ">
                                  <input type="hidden" name="city" value="">
                                  <input type="hidden" name="region" value="">
@@ -125,7 +125,7 @@
                                  <div class="lablewrp">
                                     <textarea class="form-control mb-3" autocomplete="nope" name="message" placeholder="Enter Brief" rows="3"></textarea>
                                  </div>
-                                 <Button  type="submit" name="cta1" value="Submit Now" class="submt-btn">Submit</button>
+                                 <button type="button" name="cta1" value="Submit Now" class="submt-btn">Submit</button>
                                  <div class="error mt-3 alert alert-danger text-left mb-0" style="display: none"></div>
                                  <div class="success mt-3 alert alert-success text-left mb-0" style="display: none"></div>
                                  <div class="loader" style="display: none">
@@ -1211,7 +1211,7 @@
                         <h2 class="main-heading">Fill Out The Below Form</h2>
                         <p class="main-pera">Join the ranks of successful authors who have trusted us with their literary creations.</p>
                         <div>
-                           <form class="form_submission" method="post">
+                           <form class="form_submission" method="post" novalidate>
                               <input type="hidden" name="ip" value=" <?php echo $_SERVER['REMOTE_ADDR']; ?> ">
                               <input type="hidden" name="city" value="">
                               <input type="hidden" name="region" value="">
@@ -1224,11 +1224,16 @@
                                     <input class="form-control mb-3" type="text" name="name"  placeholder="Your Name" required="" value="">
                                     <input class="form-control mb-3" type="email"  name="email" placeholder="Your Email" value="" required="required">
                                     <!-- <label class="field-txt">Budget <span>*</span></label> -->
-                                    <input class="form-control mb-3" type="text" name="phone" min="10" maxlength="15" placeholder="Your Phone" value="" required="required">
+                                    <input class="form-control mb-3" type="text" name="phone" minlength="10" maxlength="15" placeholder="Your Phone" value="" required="required">
                                  </div>
                                  <div class="col-md-6">
                                     <textarea class="form-control mb-3" autocomplete="nope" name="message" placeholder="Enter Brief" rows="3"></textarea>
-                                    <button class="btn-1 w-100" cite="Submit"  data-hover="Submit" type="submit" name="cta1" value="Submit Now" >Submit</button>
+                                    <button class="btn-1 w-100" cite="Submit" data-hover="Submit" type="submit" name="cta1" value="Submit Now">Submit</button>
+                                    <div class="error mt-3 alert alert-danger text-left mb-0" style="display: none"></div>
+                                    <div class="success mt-3 alert alert-success text-left mb-0" style="display: none"></div>
+                                    <div class="loader" style="display: none">
+                                       <img alt="loader" src="../loader.gif">
+                                    </div>
                                  </div>
                               </div>
                            </form>
@@ -1305,7 +1310,7 @@
                   </button>
                </div>
                <div class="modal-body formwrp">
-                  <form class="form_submission" method="post">
+                  <form class="form_submission" method="post" novalidate>
                      <h2>Lets Get Started</h2>
                      <p>For inquiries or assistance, kindly fill out our contact form. We’ll promptly address your concerns. Thank you for reaching out.</p>
                      <div class="row justify-content-center">
@@ -1325,7 +1330,12 @@
                         </div>
                         <div class="form-group  col-md-12 ">
                            <textarea class="form-control mb-3" autocomplete="nope" name="message" placeholder="Enter Brief" rows="3"></textarea>
-                           <button class="submt-btn" cite="Submit"  data-hover="Submit" type="submit" name="cta1" value="Submit Now" >Submit</button>
+                           <button class="submt-btn" cite="Submit" data-hover="Submit" type="submit" name="cta1" value="Submit Now">Submit</button>
+                           <div class="error mt-3 alert alert-danger text-left mb-0" style="display: none"></div>
+                           <div class="success mt-3 alert alert-success text-left mb-0" style="display: none"></div>
+                           <div class="loader" style="display: none">
+                              <img alt="loader" src="../loader.gif">
+                           </div>
                         </div>
                      </div>
                   </form>
@@ -1337,7 +1347,7 @@
       <script src="assets/js/mlib.js"></script> 
       <script src="assets/js/functions.js" async></script>
       <script src="assets/js/lazyload.min.js"></script>
-      <script src="../js/jquery.validate.min.js"></script>
+      <script src="<?php echo rtrim($actual_link, '/'); ?>/js/jquery.validate.min.js"></script>
       <?php include '../include/chat-code.php'; ?>
       <?php include '../include/chat-code-script.php'; ?>
       <script>
