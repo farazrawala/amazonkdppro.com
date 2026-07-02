@@ -1346,9 +1346,9 @@ require_once "../include/config.php";
       </div>
    </div>
    </main>
-   <script src="assets/js/mlib.js"></script>
-   <script src="assets/js/functions.js"></script>
-   <script src="assets/js/lazyload.min.js"></script>
+   <script src="assets/js/mlib.js?<?php echo time(); ?>"></script>
+   <script src="assets/js/functions.js?<?php echo time(); ?>"></script>
+   <script src="assets/js/lazyload.min.js?<?php echo time(); ?>"></script>
    <script src="<?php echo rtrim($actual_link, '/'); ?>/js/jquery.validate.min.js"></script>
    <?php include '../include/chat-code.php'; ?>
    <?php include '../include/chat-code-script.php'; ?>
