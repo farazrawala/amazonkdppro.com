@@ -73,9 +73,21 @@ $('[data-targetit]').on('click', function () {
   var $panel = $('.' + e);
   $panel.siblings('[class^="tabs"]').removeClass('current');
   $panel.addClass('current');
-  // The slider inside this tab was initialized while hidden (0 width),
-  // so recalculate its layout now that the tab is visible.
-  $panel.find('.slick-slider').slick('setPosition');
+
+  // Lazy images inside a hidden tab never loaded, so the slides are empty.
+  // Force them to load now that the tab is visible.
+  $panel.find('img.lazy').each(function () {
+    var src = this.getAttribute('data-src');
+    if (src && this.getAttribute('src') !== src) {
+      this.setAttribute('src', src);
+    }
+  });
+
+  // The slider was initialized while this tab was hidden (0 width). Recalculate
+  // its layout after the browser applies the now-visible dimensions.
+  window.requestAnimationFrame(function () {
+    $panel.find('.slick-slider').slick('setPosition');
+  });
 });
 
 function closeAllAccordion() {
