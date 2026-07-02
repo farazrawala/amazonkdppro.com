@@ -36,6 +36,17 @@ $('.testiwrprslider').slick({
     },
   ],
 });
+
+$('.portsliderrr').slick({
+  dots: !0,
+  arrows: !1,
+  infinite: !0,
+  speed: 1e3,
+  slidesToShow: 4,
+  autoplay: !1,
+  adaptiveHeight: !0,
+});
+
 $('.portslider').slick({
   dots: !0,
   arrows: !1,
@@ -43,8 +54,6 @@ $('.portslider').slick({
   speed: 1e3,
   slidesToShow: 6,
   autoplay: !1,
-  slide: 'li',
-  slide: 'li',
   adaptiveHeight: !0,
   responsive: [
     {
