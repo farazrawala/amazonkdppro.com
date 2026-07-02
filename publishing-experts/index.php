@@ -1346,18 +1346,13 @@ require_once "../include/config.php";
       </div>
    </div>
    </main>
-   <script data-cfasync="false" src="assets/js/mlib.js"></script>
-   <!-- Ensure slick + mCustomScrollbar plugins are attached to jQuery before functions.js runs
-        (the live mlib.js bundle can be stale/missing these plugins). Loaded in order, so they
-        are guaranteed available by the time functions.js initializes the sliders/scrollbars. -->
-   <script data-cfasync="false" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-   <script data-cfasync="false" src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-   <script data-cfasync="false" src="assets/js/functions.js"></script>
-   <script data-cfasync="false" src="assets/js/lazyload.min.js"></script>
-   <script data-cfasync="false" src="<?php echo rtrim($actual_link, '/'); ?>/js/jquery.validate.min.js"></script>
+   <script src="assets/js/mlib.js"></script>
+   <script src="assets/js/functions.js"></script>
+   <script src="assets/js/lazyload.min.js"></script>
+   <script src="<?php echo rtrim($actual_link, '/'); ?>/js/jquery.validate.min.js"></script>
    <?php include '../include/chat-code.php'; ?>
    <?php include '../include/chat-code-script.php'; ?>
-   <script data-cfasync="false">
+   <script>
       $(function() {
          var myLazyLoad = new LazyLoad({
             elements_selector: ".lazy"
@@ -1376,7 +1371,7 @@ require_once "../include/config.php";
          });
       });
    </script>
-   <script data-cfasync="false">
+   <script>
       setTimeout(function() {
          if (window.jQuery && typeof jQuery.fn.modal === 'function') {
             $('#popup_form1').modal('show');
@@ -1392,7 +1387,7 @@ require_once "../include/config.php";
          --light-color: 250, 245, 233
       }
    </style>
-   <script data-cfasync="false">
+   <script>
       $('input[name="phone"]').on('keypress', function(e) {
          return e.metaKey ||
             e.which <= 0 ||
