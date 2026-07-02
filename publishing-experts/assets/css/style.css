@@ -8,6 +8,14 @@
     animation:blink 5s infinite;
 }
 
+.portsliderrr .slick-slide > div {
+    margin: 0 10px;
+}
+
+.testiwrprslider .slick-slide > div {
+    margin: 0 15px;
+}
+
 .labour-day-offer img {
     width: 100%;
 }

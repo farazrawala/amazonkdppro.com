@@ -65,3 +65,13 @@ $('.portslider').slick({
     },
   ],
 });
+
+$('[data-targetit]').on('click', function () {
+  ($(this).siblings().removeClass('current'), $(this).addClass('current'));
+  var e = $(this).data('targetit');
+  ($('.' + e)
+    .siblings('[class^="tabs"]')
+    .removeClass('current'),
+    $('.' + e).addClass('current'));
+  $('.slick-slider').slick('setPosition', 0);
+});
