@@ -67,11 +67,38 @@ $('.portslider').slick({
 });
 
 $('[data-targetit]').on('click', function () {
-  ($(this).siblings().removeClass('current'), $(this).addClass('current'));
+  $(this).siblings().removeClass('current');
+  $(this).addClass('current');
   var e = $(this).data('targetit');
-  ($('.' + e)
-    .siblings('[class^="tabs"]')
-    .removeClass('current'),
-    $('.' + e).addClass('current'));
-  $('.slick-slider').slick('setPosition', 0);
+  var $panel = $('.' + e);
+  $panel.siblings('[class^="tabs"]').removeClass('current');
+  $panel.addClass('current');
+  // The slider inside this tab was initialized while hidden (0 width),
+  // so recalculate its layout now that the tab is visible.
+  setTimeout(function () {
+    $panel.find('.slick-slider').slick('setPosition');
+  }, 0);
+});
+
+function closeAllAccordion() {
+  $('.accordion .quest-title').removeClass('active');
+  $('.accordion .quest-content').stop(true, true).slideUp(300).removeClass('open');
+}
+
+// Sync initial state: collapse everything except any pre-opened item.
+$('.accordion .quest-content').not('.open').hide();
+
+$(document).on('click', '.accordion .quest-title', function (e) {
+  e.preventDefault();
+  var $title = $(this);
+  // Target the sibling content (avoids duplicate id="accordion-5" clashes).
+  var $content = $title.siblings('.quest-content');
+  if ($title.hasClass('active')) {
+    $title.removeClass('active');
+    $content.stop(true, true).slideUp(300).removeClass('open');
+  } else {
+    closeAllAccordion();
+    $title.addClass('active');
+    $content.stop(true, true).slideDown(300).addClass('open');
+  }
 });

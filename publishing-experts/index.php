@@ -1352,9 +1352,7 @@ require_once "../include/config.php";
    </script>
    <script>
       setTimeout(function() {
-         if (window.jQuery && typeof jQuery.fn.modal === 'function') {
-            $('#popup_form1').modal('show');
-         }
+         $('#popup_form1').modal('show');
       }, 3000);
    </script>
    <style type="text/css">
