@@ -73,7 +73,7 @@ $('[data-targetit]').on('click', function () {
   var $panel = $('.' + e);
   $panel.siblings('[class^="tabs"]').removeClass('current');
   $panel.addClass('current');
-
+  $(".slick-slider").slick("setPosition", 0)
   // Lazy images inside a hidden tab never loaded, so the slides are empty.
   // Force them to load now that the tab is visible.
   $panel.find('img.lazy').each(function () {
