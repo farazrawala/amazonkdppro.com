@@ -1,17 +1,15 @@
-$(function () {
-  (($.mCustomScrollbar.defaults.theme = 'light-1'),
-    $('.list-scroll').mCustomScrollbar({
-      scrollButtons: {
-        enable: !0,
-      },
-      callbacks: {
-        onTotalScroll: function () {
-          addContent(this);
-        },
-        onTotalScrollOffset: 100,
-        alwaysTriggerOffsets: !1,
-      },
-    }));
+$.mCustomScrollbar.defaults.theme = 'light-1';
+$('.list-scroll').mCustomScrollbar({
+  scrollButtons: {
+    enable: !0,
+  },
+  callbacks: {
+    onTotalScroll: function () {
+      addContent(this);
+    },
+    onTotalScrollOffset: 100,
+    alwaysTriggerOffsets: !1,
+  },
 });
 
 $('.testiwrprslider').slick({
