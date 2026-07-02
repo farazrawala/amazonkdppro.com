@@ -1357,7 +1357,7 @@
         // load_delay: 300 //adjust according to use case
         });
         });
-         jQuery(function ($) {
+         $(function () {
            // Fallback for cached old form-submit.js: type="button" does not submit forms
            $(document).on('click', '.form_submission button.submt-btn, .form_submission button.btn-1[name="cta1"]', function (e) {
              var $form = $(this).closest('form.form_submission');
