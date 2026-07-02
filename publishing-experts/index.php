@@ -1345,7 +1345,7 @@
       </div>
       </main>
       <script src="assets/js/mlib.js"></script> 
-      <script src="assets/js/functions.js" async></script>
+      <script src="assets/js/functions.js"></script>
       <script src="assets/js/lazyload.min.js"></script>
       <script src="<?php echo rtrim($actual_link, '/'); ?>/js/jquery.validate.min.js"></script>
       <?php include '../include/chat-code.php'; ?>
@@ -1364,14 +1364,64 @@
          });
       </script>
       <script>
-         $(function() {
+         jQuery(function ($) {
            var myLazyLoad = new LazyLoad({
              elements_selector: ".lazy"
-          // load_delay: 300 //adjust according to use case
+           });
+
+           function initPortfolioSlider($slider) {
+             if (!$slider.length || !$.fn.slick || $slider.hasClass("slick-initialized")) {
+               return;
+             }
+             $slider.slick({
+               dots: true,
+               arrows: false,
+               infinite: true,
+               speed: 1000,
+               slidesToShow: 4,
+               autoplay: false,
+               slide: "li",
+               adaptiveHeight: true,
+               responsive: [{
+                 breakpoint: 767,
+                 settings: { slidesToShow: 2, slidesToScroll: 1 }
+               }]
+             });
+           }
+
+           function refreshPortfolioSliders() {
+             $(".portfoliowrp .tabs.current .portsliderrr").each(function () {
+               var $slider = $(this);
+               if ($slider.hasClass("slick-initialized")) {
+                 $slider.slick("setPosition");
+               } else {
+                 initPortfolioSlider($slider);
+               }
+             });
+           }
+
+           $(".portfoliowrp .tabbewrp [data-targetit]").on("click", function () {
+             var target = $(this).data("targetit");
+             $(this).addClass("current").siblings().removeClass("current");
+             $("." + target).addClass("current").siblings(".tabs").removeClass("current");
+             setTimeout(refreshPortfolioSliders, 50);
+           });
+
+           initPortfolioSlider($(".portfoliowrp .tabs.current .portsliderrr"));
+
+           if ($.fn.fancybox) {
+             $('[data-fancybox="port"]').fancybox({
+               buttons: ["close"],
+               loop: true
+             });
+           }
+
+           $(window).on("load", refreshPortfolioSliders);
          });
-         });
-         
-          setTimeout(function(){$('#popup_form1').modal('show');; }, 3000);
+
+         setTimeout(function () {
+           $('#popup_form1').modal('show');
+         }, 3000);
       </script>
       <style type="text/css">:root {--clr-1:254,205,8;--clr-2:40,63,38;--clr-3:251, 235, 206;--dark-color:8,21,33;--light-color:250,245,233}</style>
       <script>
