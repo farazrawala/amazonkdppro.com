@@ -21,8 +21,7 @@ require_once "../include/config.php";
    <link rel="stylesheet" rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <!--<link rel="stylesheet" rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.min.css"  />   --->
    <link rel="preload" fetchpriority="high" as="image" href="../images/logo.png" type="image/webp">
-   <link rel="preload" fetchpriority="high" as="image" href="assets/images/trustpilot-1-1.svg" type="image/svg">
-   <link rel="preload" fetchpriority="high" as="image" href="assets/images/Path-973.svg" type="image/svg">
+   
    <link rel="preload" fetchpriority="high" as="image" href="assets/images/sticker-1.png" type="image/png">
    <link rel="preload" fetchpriority="high" as="image" href="assets/images/sticker-2.png" type="image/png">
    <link rel="preload" fetchpriority="high" as="image" href="assets/images/sticker-3.png" type="image/png">
@@ -1042,76 +1041,56 @@ require_once "../include/config.php";
                      </div>
                   </div>
                </div>
-               <div class="row testiwrprslider">
-                  <div class="col-md-4">
-                     <div class="mainwrp">
-                        <h4>JA - Joshua Adams</h4>
-                        <p>I wholeheartedly recommend <?php echo WEBSITE_NAME ?> to any author seeking a reliable, skilled, and supportive publishing partner. Their expertise in the industry is evident in the quality of their work and the success of their authors. Thank you, Kayla and Mike, for making my dream of becoming a published author a reality!</p>
-                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
-                     </div>
+               <div class="testiwrprslider">
+                  <div class="mainwrp">
+                     <h4>JA - Joshua Adams</h4>
+                     <p>I wholeheartedly recommend <?php echo WEBSITE_NAME ?> to any author seeking a reliable, skilled, and supportive publishing partner. Their expertise in the industry is evident in the quality of their work and the success of their authors. Thank you, Kayla and Mike, for making my dream of becoming a published author a reality!</p>
+                     <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
                   </div>
-                  <div class="col-md-4">
-                     <div class="mainwrp">
-                        <h4>SB - Sharon Baker</h4>
-                        <p> Thrilled with the Outcome! I recently had my debut novel published by <?php echo WEBSITE_NAME ?>, and I'm thrilled with the outcome. Their team was attentive, professional, and incredibly skilled at refining my manuscript. The design team also did a phenomenal job with the cover. Highly recommended!</p>
-                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
-                     </div>
+                  <div class="mainwrp">
+                     <h4>SB - Sharon Baker</h4>
+                     <p> Thrilled with the Outcome! I recently had my debut novel published by <?php echo WEBSITE_NAME ?>, and I'm thrilled with the outcome. Their team was attentive, professional, and incredibly skilled at refining my manuscript. The design team also did a phenomenal job with the cover. Highly recommended!</p>
+                     <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
                   </div>
-                  <div class="col-md-4">
-                     <div class="mainwrp">
-                        <h4>AG - Andrew Gonzalez</h4>
-                        <p> Exceptional Service and Quality! The <?php echo WEBSITE_NAME ?> team was exceptional in every way. From editorial to marketing, they were professional, and efficient, and made my publishing journey stress-free. The quality of the final product exceeded my expectations!</p>
-                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
-                     </div>
+                  <div class="mainwrp">
+                     <h4>AG - Andrew Gonzalez</h4>
+                     <p> Exceptional Service and Quality! The <?php echo WEBSITE_NAME ?> team was exceptional in every way. From editorial to marketing, they were professional, and efficient, and made my publishing journey stress-free. The quality of the final product exceeded my expectations!</p>
+                     <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
                   </div>
-                  <div class="col-md-4">
-                     <div class="mainwrp">
-                        <h4>KW – Kevin Wright</h4>
-                        <p> Navigating the world of book publishing can be daunting for an aspiring author, but my experience with <?php echo WEBSITE_NAME ?> has been nothing short of exceptional. From the onset, their team displayed unparalleled professionalism, creativity, and dedication, transforming my manuscript into a masterpiece.</p>
-                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
-                     </div>
+                  <div class="mainwrp">
+                     <h4>KW – Kevin Wright</h4>
+                     <p> Navigating the world of book publishing can be daunting for an aspiring author, but my experience with <?php echo WEBSITE_NAME ?> has been nothing short of exceptional. From the onset, their team displayed unparalleled professionalism, creativity, and dedication, transforming my manuscript into a masterpiece.</p>
+                     <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
                   </div>
-                  <div class="col-md-4">
-                     <div class="mainwrp">
-                        <h4>DY – Daniel Young</h4>
-                        <p> Communication was consistent and transparent throughout the entire publishing process. The team was always available to answer my questions, provide updates, and offer guidance. Their supportive approach made me feel valued and respected as an author.</p>
-                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
-                     </div>
+                  <div class="mainwrp">
+                     <h4>DY – Daniel Young</h4>
+                     <p> Communication was consistent and transparent throughout the entire publishing process. The team was always available to answer my questions, provide updates, and offer guidance. Their supportive approach made me feel valued and respected as an author.</p>
+                     <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
                   </div>
-                  <div class="col-md-4">
-                     <div class="mainwrp">
-                        <h4>KH – Kathy Hernandez</h4>
-                        <p> <?php echo WEBSITE_NAME ?>’ design team did an outstanding job with the cover art and layout, making my book visually appealing and engaging. Their marketing strategies were innovative and effective, significantly increasing the visibility of my book.</p>
-                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
-                     </div>
+                  <div class="mainwrp">
+                     <h4>KH – Kathy Hernandez</h4>
+                     <p> <?php echo WEBSITE_NAME ?>’ design team did an outstanding job with the cover art and layout, making my book visually appealing and engaging. Their marketing strategies were innovative and effective, significantly increasing the visibility of my book.</p>
+                     <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
                   </div>
-                  <div class="col-md-4">
-                     <div class="mainwrp">
-                        <h4>PN - Paul Nelson</h4>
-                        <p> Every phase, from editing to printing, was completed within the promised timeline. Their efficiency in meeting deadlines was impressive and greatly appreciated.</p>
-                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
-                     </div>
+                  <div class="mainwrp">
+                     <h4>PN - Paul Nelson</h4>
+                     <p> Every phase, from editing to printing, was completed within the promised timeline. Their efficiency in meeting deadlines was impressive and greatly appreciated.</p>
+                     <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
                   </div>
-                  <div class="col-md-4">
-                     <div class="mainwrp">
-                        <h4>RA - Rebecca Allen</h4>
-                        <p> Collaborating with <?php echo WEBSITE_NAME ?> has been a remarkable journey. Their commitment to bringing my vision to life while maintaining the integrity of my work was commendable. They made the entire process seamless and enjoyable.</p>
-                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
-                     </div>
+                  <div class="mainwrp">
+                     <h4>RA - Rebecca Allen</h4>
+                     <p> Collaborating with <?php echo WEBSITE_NAME ?> has been a remarkable journey. Their commitment to bringing my vision to life while maintaining the integrity of my work was commendable. They made the entire process seamless and enjoyable.</p>
+                     <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
                   </div>
-                  <div class="col-md-4">
-                     <div class="mainwrp">
-                        <h4>JA - Joshua Adams</h4>
-                        <p>I wholeheartedly recommend <?php echo WEBSITE_NAME ?> to any author seeking a reliable, skilled, and supportive publishing partner. Their expertise in the industry is evident in the quality of their work and the success of their authors. Thank you, Kayla and Mike, for making my dream of becoming a published author a reality!</p>
-                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
-                     </div>
+                  <div class="mainwrp">
+                     <h4>JA - Joshua Adams</h4>
+                     <p>I wholeheartedly recommend <?php echo WEBSITE_NAME ?> to any author seeking a reliable, skilled, and supportive publishing partner. Their expertise in the industry is evident in the quality of their work and the success of their authors. Thank you, Kayla and Mike, for making my dream of becoming a published author a reality!</p>
+                     <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
                   </div>
-                  <div class="col-md-4">
-                     <div class="mainwrp">
-                        <h4>SB - Sharon Baker</h4>
-                        <p> Thrilled with the Outcome! I recently had my debut novel published by <?php echo WEBSITE_NAME ?>, and I'm thrilled with the outcome. Their team was attentive, professional, and incredibly skilled at refining my manuscript. The design team also did a phenomenal job with the cover. Highly recommended!</p>
-                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
-                     </div>
+                  <div class="mainwrp">
+                     <h4>SB - Sharon Baker</h4>
+                     <p> Thrilled with the Outcome! I recently had my debut novel published by <?php echo WEBSITE_NAME ?>, and I'm thrilled with the outcome. Their team was attentive, professional, and incredibly skilled at refining my manuscript. The design team also did a phenomenal job with the cover. Highly recommended!</p>
+                     <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-transparent-background-illustration-png.png">
                   </div>
                </div>
             </div>
@@ -1350,7 +1329,51 @@ require_once "../include/config.php";
    <script src="assets/js/functions.js?<?php echo time(); ?>"></script>
    <script src="assets/js/lazyload.min.js?<?php echo time(); ?>"></script>
    <script src="<?php echo rtrim($actual_link, '/'); ?>/js/jquery.validate.min.js"></script>
-   
+   <?php include '../include/chat-code.php'; ?>
+   <?php include '../include/chat-code-script.php'; ?>
+   <script>
+      $(function() {
+         var myLazyLoad = new LazyLoad({
+            elements_selector: ".lazy"
+            // load_delay: 300 //adjust according to use case
+         });
+      });
+      $(function() {
+         // Fallback for cached old form-submit.js: type="button" does not submit forms
+         $(document).on('click', '.form_submission button.submt-btn, .form_submission button.btn-1[name="cta1"]', function(e) {
+            var $form = $(this).closest('form.form_submission');
+            if (!$form.length || $form.data('formSubmitInit')) {
+               return;
+            }
+            e.preventDefault();
+            $form.trigger('submit');
+         });
+      });
+   </script>
+   <script>
+      setTimeout(function() {
+         if (window.jQuery && typeof jQuery.fn.modal === 'function') {
+            $('#popup_form1').modal('show');
+         }
+      }, 3000);
+   </script>
+   <style type="text/css">
+      :root {
+         --clr-1: 254, 205, 8;
+         --clr-2: 40, 63, 38;
+         --clr-3: 251, 235, 206;
+         --dark-color: 8, 21, 33;
+         --light-color: 250, 245, 233
+      }
+   </style>
+   <script>
+      $('input[name="phone"]').on('keypress', function(e) {
+         return e.metaKey ||
+            e.which <= 0 ||
+            e.which == 8 ||
+            /[0-9]/.test(String.fromCharCode(e.which));
+      })
+   </script>
 </body>
 
 </html>
