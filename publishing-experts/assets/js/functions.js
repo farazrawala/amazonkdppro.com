@@ -55,17 +55,28 @@ function loadLazyImages($scope) {
 }
 
 // Initialize (or reposition) the portfolio slider inside a tab panel.
-// Sliders are initialized lazily, the first time their tab becomes visible,
-// so slick can measure the real (non-zero) width.
+// Sliders are initialized lazily, the first time their tab becomes visible.
+// We wait until the slider actually has a non-zero width, otherwise slick
+// measures 0 and every slide collapses (shows one big overflowing image).
 function activatePortSlider($panel) {
   var $slider = $panel.find('.portsliderrr');
   if (!$slider.length) return;
   loadLazyImages($slider);
-  if ($slider.hasClass('slick-initialized')) {
-    $slider.slick('setPosition');
-  } else {
-    $slider.slick(portSliderConfig);
-  }
+
+  var tries = 0;
+  (function ensure() {
+    // Not measurable yet (tab still transitioning/hidden) -> retry briefly.
+    if ($slider.width() <= 0 && tries < 40) {
+      tries++;
+      setTimeout(ensure, 50);
+      return;
+    }
+    if ($slider.hasClass('slick-initialized')) {
+      $slider.slick('setPosition');
+    } else {
+      $slider.slick(portSliderConfig);
+    }
+  })();
 }
 
 // Only the tab visible on load can be measured correctly, so init just that one.
@@ -100,10 +111,8 @@ $('[data-targetit]').on('click', function () {
   $panel.siblings('[class^="tabs"]').removeClass('current');
   $panel.addClass('current');
   // Init the slider the first time this tab opens (or reposition it if already
-  // initialized), now that the panel is visible and has a real width.
-  window.requestAnimationFrame(function () {
-    activatePortSlider($panel);
-  });
+  // initialized). activatePortSlider waits until the panel has a real width.
+  activatePortSlider($panel);
 });
 
 function closeAllAccordion() {
