@@ -1344,9 +1344,9 @@
          </div>
       </div>
       </main>
-      <script src="assets/js/mlib.js"></script> 
-      <script src="assets/js/functions.js"></script>
-      <script src="assets/js/lazyload.min.js"></script>
+      <script src="assets/js/mlib.js?v=<?php echo @filemtime(__DIR__ . '/assets/js/mlib.js') ?: time(); ?>"></script> 
+      <script src="assets/js/functions.js?v=<?php echo @filemtime(__DIR__ . '/assets/js/functions.js') ?: time(); ?>"></script>
+      <script src="assets/js/lazyload.min.js?v=<?php echo @filemtime(__DIR__ . '/assets/js/lazyload.min.js') ?: time(); ?>"></script>
       <script src="<?php echo rtrim($actual_link, '/'); ?>/js/jquery.validate.min.js"></script>
       <?php include '../include/chat-code.php'; ?>
       <?php include '../include/chat-code-script.php'; ?>
@@ -1373,7 +1373,9 @@
         
 
          setTimeout(function () {
-           $('#popup_form1').modal('show');
+           if (window.jQuery && typeof jQuery.fn.modal === 'function') {
+             $('#popup_form1').modal('show');
+           }
          }, 3000);
       </script>
       <style type="text/css">:root {--clr-1:254,205,8;--clr-2:40,63,38;--clr-3:251, 235, 206;--dark-color:8,21,33;--light-color:250,245,233}</style>
