@@ -75,9 +75,7 @@ $('[data-targetit]').on('click', function () {
   $panel.addClass('current');
   // The slider inside this tab was initialized while hidden (0 width),
   // so recalculate its layout now that the tab is visible.
-  setTimeout(function () {
-    $panel.find('.slick-slider').slick('setPosition');
-  }, 0);
+  $panel.find('.slick-slider').slick('setPosition');
 });
 
 function closeAllAccordion() {
