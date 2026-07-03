@@ -66,14 +66,45 @@ $('.portslider').slick({
   ],
 });
 
+function activatePortSlider($panel) {
+  var $slider = $panel.find('.portsliderrr');
+
+  if (!$slider.length) return;
+
+  loadLazyImages($slider);
+
+  function init() {
+    // Wait until panel is visible and has width
+    if (!$panel.is(':visible') || $panel.outerWidth() === 0) {
+      return requestAnimationFrame(init);
+    }
+
+    if (!$slider.hasClass('slick-initialized')) {
+      $slider.slick(portSliderConfig);
+    } else {
+      $slider.slick('setPosition');
+      $slider.slick('refresh');
+    }
+  }
+
+  requestAnimationFrame(init);
+}
+
 $('[data-targetit]').on('click', function () {
-  $(this).siblings().removeClass('current');
+  var target = $(this).data('targetit');
+
+  $('[data-targetit]').removeClass('current');
   $(this).addClass('current');
-  var e = $(this).data('targetit');
-  var $panel = $('.' + e);
-  $panel.siblings('[class^="tabs"]').removeClass('current');
-  $panel.addClass('current');
-  $('.slick-slider').slick('setPosition', 0);
+
+  $('.tabs').removeClass('current');
+
+  var $panel = $('.' + target).addClass('current');
+
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
+      activatePortSlider($panel);
+    });
+  });
 });
 
 function closeAllAccordion() {
