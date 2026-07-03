@@ -97,14 +97,21 @@ $('.portslider').slick({
   ],
 });
 
-// Initialize every slider once
-$('.portsliderrr').each(function () {
-  if (!$(this).hasClass('slick-initialized')) {
-    $(this).slick(portSliderConfig);
-  }
-});
+function initPortfolioSlider($slider) {
+  if (!$slider.length) return;
 
-$('[data-targetit]').on('click', function () {
+  if ($slider.hasClass('slick-initialized')) {
+    $slider.slick('unslick');
+  }
+
+  $slider.slick(portSliderConfig);
+}
+
+initPortfolioSlider($('.tabs.current .portsliderrr'));
+
+$('[data-targetit]').on('click', function (e) {
+  e.preventDefault();
+
   var target = $(this).data('targetit');
 
   $('[data-targetit]').removeClass('current');
@@ -112,15 +119,13 @@ $('[data-targetit]').on('click', function () {
 
   $('.tabs').removeClass('current');
 
-  var $panel = $('.' + target).addClass('current');
+  var $panel = $('.' + target);
+
+  $panel.addClass('current');
 
   setTimeout(function () {
-    $('.portsliderrr').each(function () {
-      if ($(this).hasClass('slick-initialized')) {
-        $(this).slick('setPosition');
-      }
-    });
-  }, 200);
+    initPortfolioSlider($panel.find('.portsliderrr'));
+  }, 150);
 });
 
 function closeAllAccordion() {
