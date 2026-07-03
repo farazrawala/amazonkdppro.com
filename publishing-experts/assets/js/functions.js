@@ -97,23 +97,14 @@ $('.portslider').slick({
   ],
 });
 
-function activatePortSlider($panel) {
-  var $slider = $panel.find('.portsliderrr');
+// Initialize every slider once
+$('.portsliderrr').each(function () {
+  if (!$(this).hasClass('slick-initialized')) {
+    $(this).slick(portSliderConfig);
+  }
+});
 
-  if (!$slider.length) return;
-
-  // Wait until the tab is actually visible
-  setTimeout(function () {
-    if (!$slider.hasClass('slick-initialized')) {
-      $slider.slick(portSliderConfig);
-    } else {
-      $slider.slick('setPosition');
-    }
-  }, 100);
-}
-
-activatePortSlider($('.tabs.current'));
-
+// Handle tab switching
 $('[data-targetit]').on('click', function () {
   var target = $(this).data('targetit');
 
@@ -121,9 +112,16 @@ $('[data-targetit]').on('click', function () {
   $(this).addClass('current');
 
   $('.tabs').removeClass('current');
-  var $panel = $('.' + target).addClass('current');
+  $('.' + target).addClass('current');
 
-  activatePortSlider($panel);
+  // Wait until browser has painted the tab
+  setTimeout(function () {
+    $('.' + target)
+      .find('.portsliderrr')
+      .slick('setPosition');
+
+    $(window).trigger('resize');
+  }, 200);
 });
 
 function closeAllAccordion() {
