@@ -64,7 +64,7 @@ function activatePortSlider($panel) {
   loadLazyImages($slider);
 
   var tries = 0;
-  (function ensure() {
+  function ensure() {
     // Not measurable yet (tab still transitioning/hidden) -> retry briefly.
     if ($slider.width() <= 0 && tries < 40) {
       tries++;
@@ -76,7 +76,15 @@ function activatePortSlider($panel) {
     } else {
       $slider.slick(portSliderConfig);
     }
-  })();
+    // Recompute once more after images/layout settle (portrait covers, etc.).
+    setTimeout(function () {
+      if ($slider.hasClass('slick-initialized')) {
+        $slider.slick('setPosition');
+      }
+    }, 200);
+  }
+  // Defer so the tab's display:block change is fully applied before slick measures.
+  setTimeout(ensure, 60);
 }
 
 // Only the tab visible on load can be measured correctly, so init just that one.
