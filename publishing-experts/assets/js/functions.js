@@ -107,7 +107,7 @@ function initPortfolioSlider($slider) {
   $slider.slick(portSliderConfig);
 }
 
-initPortfolioSlider($('.tabs.current .portsliderrr'));
+initPortfolioSlider($('.tabs .portsliderrr'));
 
 $('[data-targetit]').on('click', function (e) {
   e.preventDefault();
@@ -123,9 +123,9 @@ $('[data-targetit]').on('click', function (e) {
 
   $panel.addClass('current');
 
-  setTimeout(function () {
-    initPortfolioSlider($panel.find('.portsliderrr'));
-  }, 150);
+  initPortfolioSlider($panel.find('.portsliderrr'));
+
+  $('.slick-slider').slick('setPosition', 0);
 });
 
 function closeAllAccordion() {
