@@ -83,18 +83,39 @@ $('.portslider').slick({
   ],
 });
 
+// Make a loaded Owl visible + recalculated (clears the opacity:0 "owl-hidden"
+// state Owl sets when it was built before its container had a real size).
+function refreshOwl($s) {
+  $s.trigger('refresh.owl.carousel');
+  $s.removeClass('owl-hidden');
+}
+
 // Initialize (or refresh) the Owl Carousel inside a tab panel. Owl must be
-// initialized while the panel is visible, otherwise it measures a width of 0.
+// built while the panel is visible and has a non-zero width, otherwise it
+// stays hidden / never finishes initializing.
 function initPortfolioOwl($slider) {
   if (!$slider.length) return;
-  loadLazyImages($slider);
   $slider.each(function () {
     var $s = $(this);
-    if ($s.hasClass('owl-loaded')) {
-      $s.trigger('refresh.owl.carousel');
-    } else {
-      $s.addClass('owl-carousel owl-theme').owlCarousel(portOwlConfig);
-    }
+    loadLazyImages($s);
+
+    var tries = 0;
+    (function ensure() {
+      // Wait until the tab is actually visible and measurable.
+      if ($s.width() <= 0 && tries < 60) {
+        tries++;
+        setTimeout(ensure, 50);
+        return;
+      }
+      if (!$s.hasClass('owl-loaded')) {
+        $s.addClass('owl-carousel owl-theme').owlCarousel(portOwlConfig);
+      }
+      // Show + recalc now, and again once images/layout settle.
+      refreshOwl($s);
+      setTimeout(function () {
+        refreshOwl($s);
+      }, 200);
+    })();
   });
 }
 
@@ -114,10 +135,7 @@ $('[data-targetit]').on('click', function (e) {
   var $panel = $('.' + target);
   $panel.addClass('current');
 
-  // Defer so the panel's display:block is applied before Owl measures its width.
-  setTimeout(function () {
-    initPortfolioOwl($panel.find('.portsliderrr'));
-  }, 60);
+  initPortfolioOwl($panel.find('.portsliderrr'));
 });
 
 function closeAllAccordion() {
