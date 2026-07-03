@@ -104,7 +104,6 @@ $('.portsliderrr').each(function () {
   }
 });
 
-// Handle tab switching
 $('[data-targetit]').on('click', function () {
   var target = $(this).data('targetit');
 
@@ -112,15 +111,15 @@ $('[data-targetit]').on('click', function () {
   $(this).addClass('current');
 
   $('.tabs').removeClass('current');
-  $('.' + target).addClass('current');
 
-  // Wait until browser has painted the tab
+  var $panel = $('.' + target).addClass('current');
+
   setTimeout(function () {
-    $('.' + target)
-      .find('.portsliderrr')
-      .slick('setPosition');
-
-    $(window).trigger('resize');
+    $('.portsliderrr').each(function () {
+      if ($(this).hasClass('slick-initialized')) {
+        $(this).slick('setPosition');
+      }
+    });
   }, 200);
 });
 
