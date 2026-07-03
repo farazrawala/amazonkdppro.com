@@ -36,7 +36,7 @@ $('.testiwrprslider').slick({
 });
 
 // Portfolio tab sliders use Owl Carousel (it re-measures reliably on tab show).
-var portOwlConfig = {
+$('.portsliderrr').owlCarousel({
   items: 4,
   margin: 20,
   loop: true,
@@ -50,7 +50,7 @@ var portOwlConfig = {
     768: { items: 3 },
     992: { items: 4 },
   },
-};
+});
 
 // Lazy images inside a hidden tab never load; force them so slides aren't empty.
 function loadLazyImages($scope) {
@@ -83,55 +83,6 @@ $('.portslider').slick({
   ],
 });
 
-// Make a loaded Owl visible + recalculated (clears the opacity:0 "owl-hidden"
-// state Owl sets when it was built before its container had a real size).
-function refreshOwl($s) {
-  $s.trigger('refresh.owl.carousel');
-  $s.removeClass('owl-hidden');
-}
-
-// Initialize (or refresh) the Owl Carousel inside a tab panel. Owl must be
-// built while the panel is visible and has a non-zero width, otherwise it
-// stays hidden / never finishes initializing.
-function initPortfolioOwl($slider) {
-  if (!$slider.length || typeof $.fn.owlCarousel !== 'function') {
-    return;
-  }
-  $slider.each(function () {
-    var $s = $(this);
-    loadLazyImages($s);
-
-    var tries = 0;
-    (function ensure() {
-      // Wait for Owl plugin (CDN) and a measurable tab width.
-      if (
-        (typeof $.fn.owlCarousel !== 'function' || $s.width() <= 0) &&
-        tries < 60
-      ) {
-        tries++;
-        setTimeout(ensure, 50);
-        return;
-      }
-      if (typeof $.fn.owlCarousel !== 'function') {
-        return;
-      }
-      if (!$s.hasClass('owl-loaded')) {
-        $s.addClass('owl-carousel owl-theme').owlCarousel(portOwlConfig);
-      }
-      // Show + recalc now, and again once images/layout settle.
-      refreshOwl($s);
-      setTimeout(function () {
-        refreshOwl($s);
-      }, 200);
-    })();
-  });
-}
-
-// Only the tab visible on load can be measured correctly, so init just that one.
-$(function () {
-  initPortfolioOwl($('.tabs.current .portsliderrr'));
-});
-
 $('[data-targetit]').on('click', function (e) {
   e.preventDefault();
 
@@ -144,8 +95,8 @@ $('[data-targetit]').on('click', function (e) {
 
   var $panel = $('.' + target);
   $panel.addClass('current');
-
-  initPortfolioOwl($panel.find('.portsliderrr'));
+  $panel.find('.portsliderrr');
+  //   initPortfolioOwl($panel.find('.portsliderrr'));
 });
 
 function closeAllAccordion() {
