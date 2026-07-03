@@ -4,9 +4,9 @@ $('.list-scroll').mCustomScrollbar({
     enable: !0,
   },
   callbacks: {
-    onTotalScroll: function () {
-      addContent(this);
-    },
+    // onTotalScroll: function () {
+    //   addContent(this);
+    // },
     onTotalScrollOffset: 100,
     alwaysTriggerOffsets: !1,
   },
