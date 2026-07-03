@@ -1327,13 +1327,13 @@ require_once "../include/config.php";
       </div>
    </div>
    </main>
-   <script data-cfasync="false" src="assets/js/mlib.js?<?php echo time(); ?>"></script>
-   <script data-cfasync="false" src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
-   <script data-cfasync="false" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-   <script data-cfasync="false" src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-   <script data-cfasync="false" src="assets/js/functions.js?<?php echo time(); ?>"></script>
-   <script data-cfasync="false" src="assets/js/lazyload.min.js?<?php echo time(); ?>"></script>
-   <script data-cfasync="false" src="<?php echo rtrim($actual_link, '/'); ?>/js/jquery.validate.min.js"></script>
+   <script src="assets/js/mlib.js?<?php echo time(); ?>"></script>
+   <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="assets/js/functions.js?<?php echo time(); ?>"></script>
+   <script src="assets/js/lazyload.min.js?<?php echo time(); ?>"></script>
+   <script src="<?php echo rtrim($actual_link, '/'); ?>/js/jquery.validate.min.js"></script>
    <?php include '../include/chat-code.php'; ?>
    <?php include '../include/chat-code-script.php'; ?>
    <script>
