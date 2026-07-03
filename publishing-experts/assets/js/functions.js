@@ -76,8 +76,6 @@ var portSliderConfig = {
   ],
 };
 
-$('.portsliderrr').slick(portSliderConfig);
-
 $('.portslider').slick({
   dots: !0,
   arrows: !1,
@@ -104,22 +102,17 @@ function activatePortSlider($panel) {
 
   if (!$slider.length) return;
 
-  function init() {
-    // Wait until panel is visible and has width
-    if (!$panel.is(':visible') || $panel.outerWidth() === 0) {
-      return requestAnimationFrame(init);
-    }
-
+  // Wait until the tab is actually visible
+  setTimeout(function () {
     if (!$slider.hasClass('slick-initialized')) {
       $slider.slick(portSliderConfig);
     } else {
       $slider.slick('setPosition');
-      $slider.slick('refresh');
     }
-  }
-
-  requestAnimationFrame(init);
+  }, 100);
 }
+
+activatePortSlider($('.tabs.current'));
 
 $('[data-targetit]').on('click', function () {
   var target = $(this).data('targetit');
@@ -128,14 +121,9 @@ $('[data-targetit]').on('click', function () {
   $(this).addClass('current');
 
   $('.tabs').removeClass('current');
-
   var $panel = $('.' + target).addClass('current');
 
-  requestAnimationFrame(function () {
-    requestAnimationFrame(function () {
-      activatePortSlider($panel);
-    });
-  });
+  activatePortSlider($panel);
 });
 
 function closeAllAccordion() {
