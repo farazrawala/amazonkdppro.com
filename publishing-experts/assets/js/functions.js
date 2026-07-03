@@ -35,15 +35,48 @@ $('.testiwrprslider').slick({
   ],
 });
 
-$('.portsliderrr').slick({
-  dots: !0,
-  arrows: !1,
-  infinite: !0,
-  speed: 1e3,
+// $('.portsliderrr').slick({
+//   dots: !0,
+//   arrows: !1,
+//   infinite: !0,
+//   speed: 1e3,
+//   slidesToShow: 4,
+//   autoplay: !1,
+//   adaptiveHeight: !0,
+// });
+
+var portSliderConfig = {
+  dots: true,
+  arrows: false,
+  infinite: true,
+  speed: 1000,
   slidesToShow: 4,
-  autoplay: !1,
-  adaptiveHeight: !0,
-});
+  slidesToScroll: 1,
+  autoplay: false,
+  adaptiveHeight: true,
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
+};
+
+$('.portsliderrr').slick(portSliderConfig);
 
 $('.portslider').slick({
   dots: !0,
@@ -70,8 +103,6 @@ function activatePortSlider($panel) {
   var $slider = $panel.find('.portsliderrr');
 
   if (!$slider.length) return;
-
-  loadLazyImages($slider);
 
   function init() {
     // Wait until panel is visible and has width
