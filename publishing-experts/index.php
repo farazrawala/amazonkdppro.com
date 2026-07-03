@@ -13,8 +13,8 @@ require_once "../include/config.php";
    <link href="assets/css/m-style.css?<?php echo time(); ?>" rel="stylesheet" rel="preload" as="style" type="text/css" />
    <link href="assets/css/style.css?<?php echo time(); ?>" rel="stylesheet" rel="preload" as="style" type="text/css" />
    <link href="assets/css/newcss.css?<?php echo time(); ?>" rel="stylesheet" rel="preload" as="style" type="text/css" />
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.theme.default.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css?<?php echo time(); ?>">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.theme.default.min.css?<?php echo time(); ?>">
    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
    <link rel="preconnect" href="https://cdn.jsdelivr.net">
