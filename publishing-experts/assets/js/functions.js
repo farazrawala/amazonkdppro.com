@@ -35,46 +35,32 @@ $('.testiwrprslider').slick({
   ],
 });
 
-// $('.portsliderrr').slick({
-//   dots: !0,
-//   arrows: !1,
-//   infinite: !0,
-//   speed: 1e3,
-//   slidesToShow: 4,
-//   autoplay: !1,
-//   adaptiveHeight: !0,
-// });
-
-var portSliderConfig = {
+// Portfolio tab sliders use Owl Carousel (it re-measures reliably on tab show).
+var portOwlConfig = {
+  items: 4,
+  margin: 20,
+  loop: true,
+  nav: false,
   dots: true,
-  arrows: false,
-  infinite: true,
-  speed: 1000,
-  slidesToShow: 4,
-  slidesToScroll: 1,
   autoplay: false,
-  adaptiveHeight: true,
-  responsive: [
-    {
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 3,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2,
-      },
-    },
-    {
-      breakpoint: 576,
-      settings: {
-        slidesToShow: 1,
-      },
-    },
-  ],
+  smartSpeed: 600,
+  responsive: {
+    0: { items: 1 },
+    576: { items: 2 },
+    768: { items: 3 },
+    992: { items: 4 },
+  },
 };
+
+// Lazy images inside a hidden tab never load; force them so slides aren't empty.
+function loadLazyImages($scope) {
+  $scope.find('img.lazy').each(function () {
+    var src = this.getAttribute('data-src');
+    if (src && this.getAttribute('src') !== src) {
+      this.setAttribute('src', src);
+    }
+  });
+}
 
 $('.portslider').slick({
   dots: !0,
@@ -97,17 +83,23 @@ $('.portslider').slick({
   ],
 });
 
-function initPortfolioSlider($slider) {
+// Initialize (or refresh) the Owl Carousel inside a tab panel. Owl must be
+// initialized while the panel is visible, otherwise it measures a width of 0.
+function initPortfolioOwl($slider) {
   if (!$slider.length) return;
-
-  if ($slider.hasClass('slick-initialized')) {
-    $slider.slick('unslick');
-  }
-
-  $slider.slick(portSliderConfig);
+  loadLazyImages($slider);
+  $slider.each(function () {
+    var $s = $(this);
+    if ($s.hasClass('owl-loaded')) {
+      $s.trigger('refresh.owl.carousel');
+    } else {
+      $s.addClass('owl-carousel owl-theme').owlCarousel(portOwlConfig);
+    }
+  });
 }
 
-initPortfolioSlider($('.tabs .portsliderrr'));
+// Only the tab visible on load can be measured correctly, so init just that one.
+initPortfolioOwl($('.tabs.current .portsliderrr'));
 
 $('[data-targetit]').on('click', function (e) {
   e.preventDefault();
@@ -120,12 +112,12 @@ $('[data-targetit]').on('click', function (e) {
   $('.tabs').removeClass('current');
 
   var $panel = $('.' + target);
-
   $panel.addClass('current');
 
-  initPortfolioSlider($panel.find('.portsliderrr'));
-
-  $('.slick-slider').slick('setPosition', 0);
+  // Defer so the panel's display:block is applied before Owl measures its width.
+  setTimeout(function () {
+    initPortfolioOwl($panel.find('.portsliderrr'));
+  }, 60);
 });
 
 function closeAllAccordion() {

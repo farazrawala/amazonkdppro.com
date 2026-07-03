@@ -12,6 +12,15 @@
     margin: 0 10px;
 }
 
+/* Owl Carousel portfolio tabs */
+.portsliderrr.owl-carousel li {
+    list-style: none;
+}
+.portsliderrr.owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+}
+
 .testiwrprslider .slick-slide > div {
     margin: 0 15px;
 }

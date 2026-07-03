@@ -13,6 +13,8 @@ require_once "../include/config.php";
    <link href="assets/css/m-style.css?<?php echo time(); ?>" rel="stylesheet" rel="preload" as="style" type="text/css" />
    <link href="assets/css/style.css?<?php echo time(); ?>" rel="stylesheet" rel="preload" as="style" type="text/css" />
    <link href="assets/css/newcss.css?<?php echo time(); ?>" rel="stylesheet" rel="preload" as="style" type="text/css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
    <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -1326,6 +1328,7 @@ require_once "../include/config.php";
    </div>
    </main>
    <script src="assets/js/mlib.js?<?php echo time(); ?>"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
    <script src="assets/js/functions.js?<?php echo time(); ?>"></script>
    <script src="assets/js/lazyload.min.js?<?php echo time(); ?>"></script>
    <script src="<?php echo rtrim($actual_link, '/'); ?>/js/jquery.validate.min.js"></script>
