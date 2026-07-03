@@ -13,8 +13,8 @@ require_once "../include/config.php";
    <link href="assets/css/m-style.css?<?php echo time(); ?>" rel="stylesheet" rel="preload" as="style" type="text/css" />
    <link href="assets/css/style.css?<?php echo time(); ?>" rel="stylesheet" rel="preload" as="style" type="text/css" />
    <link href="assets/css/newcss.css?<?php echo time(); ?>" rel="stylesheet" rel="preload" as="style" type="text/css" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.theme.default.min.css">
    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
    <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -1327,11 +1327,13 @@ require_once "../include/config.php";
       </div>
    </div>
    </main>
-   <script src="assets/js/mlib.js?<?php echo time(); ?>"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-   <script src="assets/js/functions.js?<?php echo time(); ?>"></script>
-   <script src="assets/js/lazyload.min.js?<?php echo time(); ?>"></script>
-   <script src="<?php echo rtrim($actual_link, '/'); ?>/js/jquery.validate.min.js"></script>
+   <script data-cfasync="false" src="assets/js/mlib.js?<?php echo time(); ?>"></script>
+   <script data-cfasync="false" src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+   <script data-cfasync="false" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+   <script data-cfasync="false" src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script data-cfasync="false" src="assets/js/functions.js?<?php echo time(); ?>"></script>
+   <script data-cfasync="false" src="assets/js/lazyload.min.js?<?php echo time(); ?>"></script>
+   <script data-cfasync="false" src="<?php echo rtrim($actual_link, '/'); ?>/js/jquery.validate.min.js"></script>
    <?php include '../include/chat-code.php'; ?>
    <?php include '../include/chat-code-script.php'; ?>
    <script>
@@ -1353,9 +1355,11 @@ require_once "../include/config.php";
          });
       });
    </script>
-   <script>
+   <script data-cfasync="false">
       setTimeout(function() {
-         $('#popup_form1').modal('show');
+         if (window.jQuery && typeof jQuery.fn.modal === 'function') {
+            $('#popup_form1').modal('show');
+         }
       }, 3000);
    </script>
    <style type="text/css">

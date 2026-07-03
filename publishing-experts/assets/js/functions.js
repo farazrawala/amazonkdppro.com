@@ -94,17 +94,25 @@ function refreshOwl($s) {
 // built while the panel is visible and has a non-zero width, otherwise it
 // stays hidden / never finishes initializing.
 function initPortfolioOwl($slider) {
-  if (!$slider.length) return;
+  if (!$slider.length || typeof $.fn.owlCarousel !== 'function') {
+    return;
+  }
   $slider.each(function () {
     var $s = $(this);
     loadLazyImages($s);
 
     var tries = 0;
     (function ensure() {
-      // Wait until the tab is actually visible and measurable.
-      if ($s.width() <= 0 && tries < 60) {
+      // Wait for Owl plugin (CDN) and a measurable tab width.
+      if (
+        (typeof $.fn.owlCarousel !== 'function' || $s.width() <= 0) &&
+        tries < 60
+      ) {
         tries++;
         setTimeout(ensure, 50);
+        return;
+      }
+      if (typeof $.fn.owlCarousel !== 'function') {
         return;
       }
       if (!$s.hasClass('owl-loaded')) {
@@ -120,7 +128,9 @@ function initPortfolioOwl($slider) {
 }
 
 // Only the tab visible on load can be measured correctly, so init just that one.
-initPortfolioOwl($('.tabs.current .portsliderrr'));
+$(function () {
+  initPortfolioOwl($('.tabs.current .portsliderrr'));
+});
 
 $('[data-targetit]').on('click', function (e) {
   e.preventDefault();
