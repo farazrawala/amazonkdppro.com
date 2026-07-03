@@ -490,7 +490,7 @@ require_once "../include/config.php";
                            <div class="row">
                               <div class="col-md-12">
                                  <div class="port-box">
-                                    <ul class="portsliderrr">
+                                    <ul class="portsliderrr owl-carousel owl-theme">
                                        <li class="">
                                           <a data-fancybox="port" href="assets/images/Fiction-01-1-e1713480529658.webp">
                                              <figure>
@@ -556,7 +556,7 @@ require_once "../include/config.php";
                            <div class="row">
                               <div class="col-md-12">
                                  <div class="port-box">
-                                    <ul class="portsliderrr">
+                                    <ul class="portsliderrr owl-carousel owl-theme">
                                        <li class="">
                                           <a data-fancybox="port" href="assets/images/Non-Fiction-01-669x1024.webp">
                                              <figure>
@@ -622,7 +622,7 @@ require_once "../include/config.php";
                            <div class="row">
                               <div class="col-md-12">
                                  <div class="port-box">
-                                    <ul class="portsliderrr">
+                                    <ul class="portsliderrr owl-carousel owl-theme">
                                        <li class="">
                                           <a data-fancybox="port" href="assets/images/Biography-01-669x1024.webp">
                                              <figure>
@@ -688,7 +688,7 @@ require_once "../include/config.php";
                            <div class="row">
                               <div class="col-md-12">
                                  <div class="port-box">
-                                    <ul class="portsliderrr">
+                                    <ul class="portsliderrr owl-carousel owl-theme">
                                        <li class="">
                                           <a data-fancybox="port" href="assets/images/Health-02-669x1024.webp">
                                              <figure>
@@ -747,7 +747,7 @@ require_once "../include/config.php";
                            <div class="row">
                               <div class="col-md-12">
                                  <div class="port-box">
-                                    <ul class="portsliderrr">
+                                    <ul class="portsliderrr owl-carousel owl-theme">
                                        <li class="">
                                           <a data-fancybox="port" href="assets/images/Romance-01-669x1024.webp">
                                              <figure>
@@ -806,7 +806,7 @@ require_once "../include/config.php";
                            <div class="row">
                               <div class="col-md-12">
                                  <div class="port-box">
-                                    <ul class="portsliderrr">
+                                    <ul class="portsliderrr owl-carousel owl-theme">
                                        <li class="">
                                           <a data-fancybox="port" href="assets/images/Childrens-Book-01-669x1024.webp">
                                              <figure>
@@ -872,7 +872,7 @@ require_once "../include/config.php";
                            <div class="row">
                               <div class="col-md-12">
                                  <div class="port-box">
-                                    <ul class="portsliderrr">
+                                    <ul class="portsliderrr owl-carousel owl-theme">
                                        <li class="">
                                           <a data-fancybox="port" href="assets/images/Memoir-01-669x1024.webp">
                                              <figure>
@@ -938,7 +938,7 @@ require_once "../include/config.php";
                            <div class="row">
                               <div class="col-md-12">
                                  <div class="port-box">
-                                    <ul class="portsliderrr">
+                                    <ul class="portsliderrr owl-carousel owl-theme">
                                        <li class="">
                                           <a data-fancybox="port" href="assets/images/Horror-01-669x1024.webp">
                                              <figure>
