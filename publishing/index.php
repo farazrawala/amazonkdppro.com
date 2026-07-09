@@ -26,13 +26,15 @@
 
     <link rel="preload" href="assets/images/banner-2.webp" as="image">
     <!-- Non-critical styles: preload -> stylesheet -->
-    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/style.css?<?=rand()?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="assets/css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <noscript>
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style.css?<?=rand()?>">
         <link rel="stylesheet" href="assets/css/responsive.css">
     </noscript>
+
+
 
     
    <?php include '../include/chat-code.php'; ?>
@@ -1673,7 +1675,7 @@
                     <div class="footer_inner">
                         
                         <a href="https://amazonkdppro.com/publishing/" class="d-block">
-                            <img src="assets/images/logo.png" alt="footer">
+                            <img src="assets/images/logo_white.png" alt="footer">
                         </a>
                         <p> <?php echo WEBSITE_NAME ?> offers a full range of publishing services designed to make your journey
                             simple, clear, and effective. Get your book into the hands of readers with cutting-edge
