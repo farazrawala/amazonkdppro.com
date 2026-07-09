@@ -1748,15 +1748,14 @@
             </div>
             <div class="row mt-5 justify-content-between">
                 <div class="col-md-4">
-                    <div class="privacy ">
+                    <div class="privacy">
                         <a href="
-                  https://www.amazonkdppro.com/privacy">Privacy-Policy</a>
+                  https://www.amazonkdppro.com/privacy.php">Privacy-Policy</a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="privacy text-end">
-                        <a href="https://www.amazonkdppro.com/terms
-">Terms and Conditions</a>
+                        <a href="https://www.amazonkdppro.com/terms.php">Terms and Conditions</a>
                     </div>
                 </div>
                 

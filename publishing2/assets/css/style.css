@@ -468,8 +468,8 @@ section.thanks-sec {
 }
 
 .footer_inner img {
-  /* width: 58%; */
-  /* margin: 0 -18px */
+  width: 58%;
+  margin: 0 -18px
   filter: brightness(0) invert(1);
 }
 
