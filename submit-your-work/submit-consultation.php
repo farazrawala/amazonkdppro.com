@@ -127,7 +127,8 @@ function sendMail(string $toEmail, string $toName, string $subject, string $body
 
 try {
     $adminBody = buildEmailBody($formData, 'New Consultation Request - Amazon KDP Pro');
-    sendMail('info@amazonkdpexperts.com', 'Amazon KDP Experts', 'New Consultation Request - Amazon KDP Pro', $adminBody);
+    // sendMail('info@amazonkdpexperts.com', 'Amazon KDP Experts', 'New Consultation Request - Amazon KDP Pro', $adminBody);
+    respond(true, 'Form submitted successfully.');
 
     $userBody = buildEmailBody($formData, 'Your Consultation Request Received');
     sendMail($email, $name, 'Your Consultation Request - Amazon KDP Pro', $userBody);
