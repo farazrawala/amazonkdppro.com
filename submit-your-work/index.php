@@ -826,17 +826,12 @@ $pageBase = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')
             }
         }
     </style>
-    <!-- Google Tag Manager -->
-    
-    <!-- End Google Tag Manager -->
+    <?php include '../include/chat-code.php'; ?>
 
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
     
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- Navigation Header -->
     <!-- Navigation Header -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
