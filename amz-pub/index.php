@@ -158,30 +158,30 @@
          </div>
          <div class="books-slider-main">
             <div class="book-slides">
-               <a href="images/portfolio/1.png" data-fancybox=""><img src="images/1.png" alt=""></a>
+               <a href="images/1.png" data-fancybox=""><img src="images/1.png" alt=""></a>
             </div>
-            <div class="book-slides"><a href="images/portfolio/2.png" data-fancybox="">
+            <div class="book-slides"><a href="images/2.png" data-fancybox="">
                   <img src="images/2.png" alt="">
                </a></div>
-            <div class="book-slides"><a href="images/portfolio/3.png" data-fancybox="">
+            <div class="book-slides"><a href="images/3.png" data-fancybox="">
                   <img src="images/3.png" alt="">
                </a></div>
-            <div class="book-slides"><a href="images/portfolio/4.png" data-fancybox="">
+            <div class="book-slides"><a href="images/4.png" data-fancybox="">
                   <img src="images/4.png" alt="">
                </a></div>
-            <div class="book-slides"><a href="images/portfolio/5.png" data-fancybox="">
+            <div class="book-slides"><a href="images/5.png" data-fancybox="">
                   <img src="images/5.png" alt="">
                </a></div>
-            <div class="book-slides"><a href="images/portfolio/6.png" data-fancybox="">
+            <div class="book-slides"><a href="images/6.png" data-fancybox="">
                   <img src="images/6.png" alt="">
                </a></div>
-            <div class="book-slides"><a href="images/portfolio/7.png" data-fancybox="">
+            <div class="book-slides"><a href="images/7.png" data-fancybox="">
                   <img src="images/7.png" alt="">
                </a></div>
-            <div class="book-slides"><a href="images/portfolio/8.png" data-fancybox="">
+            <div class="book-slides"><a href="images/8.png" data-fancybox="">
                   <img src="images/8.png" alt="">
                </a></div>
-            <div class="book-slides"><a href="images/portfolio/9.png" data-fancybox="">
+            <div class="book-slides"><a href="images/9.png" data-fancybox="">
                   <img src="images/9.png" alt="">
                </a></div>
          </div>
