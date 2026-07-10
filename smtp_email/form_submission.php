@@ -97,25 +97,28 @@ $mail = new PHPMailer(true);
 
 try {
     // Server settings
-    $mail->isSMTP();                                      // Enable SMTP
-    $mail->Host       = 'mail.amazon-publishers.co';      // SMTP host
-    $mail->SMTPAuth   = true;                             // Enable SMTP authentication
-    $mail->Username   = 'leads@amazon-publishers.co';     // SMTP username
-    $mail->Password   = 'leads@amazon-publishers.co';     // SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;      // Enable implicit TLS encryption
-    $mail->Port       = 465;                              // TCP port to connect to (use 465 for SSL, 587 for TLS)
-    
-    // Alternative TLS configuration (uncomment if SSL doesn't work)
-    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    // $mail->Port       = 587;
+    $smtpHost = 'smtp.gmail.com';
+    $smtpPort = 465;
+    $smtpUser = 'travisarthurkdp@gmail.com';
+    $smtpPass = 'mbkr dngi cbzt elvr';
+    $fromEmail = $smtpUser;
+    $fromName = 'Amazon KDP Pro - Publishing Experts';
+
+    $mail->isSMTP();
+    $mail->Host = $smtpHost;
+    $mail->SMTPAuth = true;
+    $mail->Username = $smtpUser;
+    $mail->Password = $smtpPass;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port = $smtpPort;
     
     // Enable verbose debug output (optional - remove in production)
     $mail->SMTPDebug = SMTP::DEBUG_OFF;
     
     // Recipients
-    $mail->setFrom('leads@amazon-publishers.co', 'Amazon KDP Experts');
-    $mail->addAddress('info@amazonkdpexperts.com', 'Inquiry Form');     // Add a recipient
-    
+    $mail->setFrom($fromEmail, $fromName);
+    $mail->addAddress('info@amazonkdpexperts.com', 'Inquiry Form');
+    // $mail->addAddress('johndavid78663@gmail.com', 'John David');
     // Content
     $mail->isHTML(true);                                   // Set email format to HTML
     $mail->Subject = 'New Form Submission - ' . date('Y-m-d H:i:s');

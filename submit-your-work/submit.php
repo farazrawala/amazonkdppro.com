@@ -91,46 +91,51 @@ if ($email !== $confirmEmail) {
     respond(false, 'Email addresses do not match.', 422);
 }
 
-if (empty($_FILES['manuscript']) || $_FILES['manuscript']['error'] === UPLOAD_ERR_NO_FILE) {
-    respond(false, 'Please upload your manuscript file.', 422);
+$originalName = '';
+$fileUrl = '';
+$destination = null;
+
+$fileError = isset($_FILES['manuscript']['error']) ? (int) $_FILES['manuscript']['error'] : UPLOAD_ERR_NO_FILE;
+$hasManuscript = $fileError !== UPLOAD_ERR_NO_FILE && !empty($_FILES['manuscript']['name']);
+
+if ($hasManuscript) {
+    $file = $_FILES['manuscript'];
+
+    if ($fileError !== UPLOAD_ERR_OK) {
+        respond(false, 'File upload failed. Please try again.', 422);
+    }
+
+    $allowedExtensions = ['pdf', 'doc', 'docx', 'txt'];
+    $maxSize = 10 * 1024 * 1024;
+    $originalName = $file['name'];
+    $extension = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
+
+    if (!in_array($extension, $allowedExtensions, true)) {
+        respond(false, 'Invalid file type. Allowed: PDF, DOC, DOCX, TXT.', 422);
+    }
+
+    if ($file['size'] > $maxSize) {
+        respond(false, 'File size must be less than 10MB.', 422);
+    }
+
+    $uploadDir = __DIR__ . '/uploads/manuscripts/';
+    if (!is_dir($uploadDir) && !mkdir($uploadDir, 0755, true)) {
+        respond(false, 'Unable to create upload directory.', 500);
+    }
+
+    $safeBaseName = preg_replace('/[^a-zA-Z0-9_-]/', '_', pathinfo($originalName, PATHINFO_FILENAME));
+    $storedName = date('Ymd_His') . '_' . uniqid() . '_' . $safeBaseName . '.' . $extension;
+    $destination = $uploadDir . $storedName;
+
+    if (!move_uploaded_file($file['tmp_name'], $destination)) {
+        respond(false, 'Failed to save uploaded file.', 500);
+    }
+
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+    $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+    $scriptDir = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])), '/');
+    $fileUrl = $protocol . '://' . $host . $scriptDir . '/uploads/manuscripts/' . rawurlencode($storedName);
 }
-
-$file = $_FILES['manuscript'];
-
-if ($file['error'] !== UPLOAD_ERR_OK) {
-    respond(false, 'File upload failed. Please try again.', 422);
-}
-
-$allowedExtensions = ['pdf', 'doc', 'docx', 'txt'];
-$maxSize = 10 * 1024 * 1024;
-$originalName = $file['name'];
-$extension = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
-
-if (!in_array($extension, $allowedExtensions, true)) {
-    respond(false, 'Invalid file type. Allowed: PDF, DOC, DOCX, TXT.', 422);
-}
-
-if ($file['size'] > $maxSize) {
-    respond(false, 'File size must be less than 10MB.', 422);
-}
-
-$uploadDir = __DIR__ . '/uploads/manuscripts/';
-if (!is_dir($uploadDir) && !mkdir($uploadDir, 0755, true)) {
-    respond(false, 'Unable to create upload directory.', 500);
-}
-
-$safeBaseName = preg_replace('/[^a-zA-Z0-9_-]/', '_', pathinfo($originalName, PATHINFO_FILENAME));
-$storedName = date('Ymd_His') . '_' . uniqid() . '_' . $safeBaseName . '.' . $extension;
-$destination = $uploadDir . $storedName;
-
-if (!move_uploaded_file($file['tmp_name'], $destination)) {
-    respond(false, 'Failed to save uploaded file.', 500);
-}
-
-$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
-$scriptDir = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])), '/');
-$fileUrl = $protocol . '://' . $host . $scriptDir . '/uploads/manuscripts/' . rawurlencode($storedName);
 
 $formData = [
     'Title' => trim($_POST['title']),
@@ -147,9 +152,12 @@ $formData = [
     'Genre' => trim($_POST['genre']),
     'Synopsis' => trim($_POST['synopsis']),
     'Author Information' => trim($_POST['authorInfo'] ?? ''),
-    'Manuscript File' => $originalName,
-    'Download Link' => $fileUrl,
+    'Manuscript File' => $hasManuscript ? $originalName : 'Not provided',
 ];
+
+if ($hasManuscript) {
+    $formData['Download Link'] = $fileUrl;
+}
 
 function buildEmailBody(array $formData, string $heading): string
 {
@@ -229,18 +237,25 @@ function buildEmailBody(array $formData, string $heading): string
 
 function sendMail(string $toEmail, string $toName, string $subject, string $body): void
 {
+    $smtpHost = 'smtp.gmail.com';
+    $smtpPort = 465;
+    $smtpUser = 'travisarthurkdp@gmail.com';
+    $smtpPass = 'mbkr dngi cbzt elvr';
+    $fromEmail = $smtpUser;
+    $fromName = 'Amazon KDP Pro - Publishing Experts';
+
     $mail = new PHPMailer(true);
 
     $mail->isSMTP();
-    $mail->Host = 'mail.amazon-publishers.co';
+    $mail->Host = $smtpHost;
     $mail->SMTPAuth = true;
-    $mail->Username = 'leads@amazon-publishers.co';
-    $mail->Password = 'leads@amazon-publishers.co';
+    $mail->Username = $smtpUser;
+    $mail->Password = $smtpPass;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port = 465;
+    $mail->Port = $smtpPort;
     $mail->SMTPDebug = SMTP::DEBUG_OFF;
 
-    $mail->setFrom('leads@amazon-publishers.co', 'Amazon Publishers');
+    $mail->setFrom($fromEmail, $fromName);
     $mail->addAddress($toEmail, $toName);
     $mail->isHTML(true);
     $mail->Subject = $subject;

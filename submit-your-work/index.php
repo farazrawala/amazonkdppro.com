@@ -932,7 +932,7 @@ $pageBase = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')
 
                 <div id="formAlert" class="form-alert" style="display:none;" role="alert"></div>
 
-                <form class="form_submission" id="manuscriptSubmissionForm" method="POST" action="submit.php" enctype="multipart/form-data">
+                <form class="manuscript_submission" id="manuscriptSubmissionForm" method="POST" action="submit.php" enctype="multipart/form-data" novalidate>
                     <!-- Personal Information Section -->
                     <div class="form-section">
                         <h3 class="section-title-form">
@@ -1337,11 +1337,11 @@ $pageBase = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')
                             Manuscript Upload
                         </h3>
                         <div class="file-upload-wrapper">
-                            <input type="file" name="manuscript" class="file-input" accept=".pdf,.doc,.docx,.txt" required>
+                            <input type="file" name="manuscript" class="file-input" accept=".pdf,.doc,.docx,.txt">
                             <label class="file-upload-label">
                                 <i class="fas fa-cloud-upload-alt"></i>
                                 <span class="file-text">Choose File</span>
-                                <span class="file-subtext">PDF, DOC, DOCX, TXT (Max 10MB)</span>
+                                <span class="file-subtext">PDF, DOC, DOCX, TXT (Max 10MB) — Optional</span>
                             </label>
                             <div class="file-selected" style="display: none;">
                                 <i class="fas fa-file-alt"></i>
@@ -1405,7 +1405,7 @@ $pageBase = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')
                 </div>
 
                 <!-- Social Media Icons -->
-                <div class="social-section" data-aos="fade-up" data-aos-delay="400">
+               <!--  <div class="social-section" data-aos="fade-up" data-aos-delay="400">
                     <div class="social-icons">
                         <a href="https://www.facebook.com/authorssolution.co.uk/" target="_blank"
                             class="social-icon facebook" aria-label="Facebook">
@@ -1434,7 +1434,7 @@ $pageBase = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')
                         </a>
 
                     </div>
-                </div>
+                </div> -->
             </div>
         </footer>
     </div>
@@ -1681,6 +1681,10 @@ $pageBase = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')
                     formAlert.style.display = 'none';
 
                     const formData = new FormData(manuscriptForm);
+                    const manuscriptFile = manuscriptForm.querySelector('[name="manuscript"]');
+                    if (manuscriptFile && (!manuscriptFile.files || !manuscriptFile.files.length)) {
+                        formData.delete('manuscript');
+                    }
 
                     fetch(getFormEndpoint('submit.php'), {
                         method: 'POST',

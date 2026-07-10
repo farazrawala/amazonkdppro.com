@@ -62,7 +62,8 @@ require_once "../include/config.php";
                               <a href="<?php echo EMAIL_HREF ?>"><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo EMAIL ?></a>
                            </li>
                            <li>
-                              <a class="btn-1 eggoffer " href="javascript:;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup_form1">Get 50% off</a>
+                              <a href="<?php echo PHONE_HREF ?>" class="btn-1 eggoffer " href="javascript:;" type="button" class="btn btn-primary"  
+                              >Get 50% off</a>
                            </li>
                         </ul>
                      </div>
@@ -229,7 +230,7 @@ require_once "../include/config.php";
                         </div>
                         <div class="btnwrp">
                            <a class="btn-1 eggoffer" type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup_form1">Get A Quote</a>
-                           <a style="margin-left:  15px;" class="btn-1 eggoffer" type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup_form1">Get 50% Off</a>
+                           <a href="<?php echo PHONE_HREF ?>" style="margin-left:  15px;" class="btn-1 eggoffer" type="button" class="btn btn-primary">Get 50% Off</a>
                         </div>
                      </div>
                   </div>
@@ -281,7 +282,7 @@ require_once "../include/config.php";
                      <div class="col-md-12">
                         <div class="btnwrp text-center">
                            <a class="btn-1 eggoffer" type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup_form1">Get A Quote</a>
-                           <a style="margin-left: 15px;" class="btn-1 eggoffer" type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup_form1">Get 50% Off</a>
+                           <a style="margin-left: 15px;" class="btn-1 eggoffer" type="button" class="btn btn-primary" href="<?php echo PHONE_HREF ?>" >Get 50% Off</a>
                         </div>
                      </div>
                   </div>
@@ -303,12 +304,12 @@ require_once "../include/config.php";
                         </div>
                         <div class="btnwrp">
                            <a class="btn-1 eggoffer" type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup_form1">Get A Quote</a>
-                           <a style="margin-left:  15px;" class="btn-1 eggoffer" type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup_form1">Get 50% Off</a>
+                           <a style="margin-left:  15px;" class="btn-1 eggoffer" type="button" class="btn btn-primary" href="<?php echo PHONE_HREF ?>" >Get 50% Off</a>
                         </div>
                      </div>
                      <div class="col-md-6">
                         <div class="imgwrp">
-                           <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/publishing-img-1.svg">
+                           <img class="lazy" src="assets/images/story-img.webp" data-src="assets/images/story-img.webp">
                         </div>
                      </div>
                   </div>
@@ -456,7 +457,7 @@ require_once "../include/config.php";
                   <p>We offer various publishing options, editorial services, customized marketing strategies, and personalized customer service to enable you to achieve your big literary dream.</p>
                   <div class="btnwrp text-center">
                      <a class="btn-1 eggoffer" type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup_form1">Get A Quote</a>
-                     <a style="margin-left: 15px;" class="btn-1 eggoffer" type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup_form1">Get 50% Off</a>
+                     <a style="margin-left: 15px;" class="btn-1 eggoffer" type="button" class="btn btn-primary" href="<?php echo PHONE_HREF ?>" >Get 50% Off</a>
                   </div>
                </div>
             </div>
@@ -491,62 +492,14 @@ require_once "../include/config.php";
                               <div class="col-md-12">
                                  <div class="port-box">
                                     <ul class="portsliderrr owl-carousel owl-theme">
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Fiction-01-1-e1713480529658.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-01-1-e1713480529658.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Fiction-02-1.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-02-1.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Fiction-03.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-03.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Fiction-04.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-04.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Fiction-05.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-05.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Fiction-06.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-06.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Fiction-07.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-07.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Fiction-08.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-08.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-01-1-e1713480529658.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-02-1.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-03.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-04.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-05.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-06.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-07.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Fiction-08.webp" alt="t-1"></figure></li>
                                     </ul>
                                  </div>
                               </div>
@@ -557,62 +510,14 @@ require_once "../include/config.php";
                               <div class="col-md-12">
                                  <div class="port-box">
                                     <ul class="portsliderrr owl-carousel owl-theme">
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Non-Fiction-01-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-01-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Non-Fiction-02-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-02-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Non-Fiction-03-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-03-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Non-Fiction-04-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-04-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Non-Fiction-05-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-05-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Non-Fiction-06-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-06-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Non-Fiction-07-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-07-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Non-Fiction-08-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-08-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-01-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-02-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-03-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-04-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-05-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-06-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-07-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Non-Fiction-08-669x1024.webp" alt="t-1"></figure></li>
                                     </ul>
                                  </div>
                               </div>
@@ -623,62 +528,14 @@ require_once "../include/config.php";
                               <div class="col-md-12">
                                  <div class="port-box">
                                     <ul class="portsliderrr owl-carousel owl-theme">
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Biography-01-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-01-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Biography-02-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-02-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Biography-03-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-03-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Biography-04-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-04-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Biography-05-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-05-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Biography-06-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-06-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Biography-07-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-07-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Biography-08-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-08-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-01-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-02-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-03-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-04-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-05-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-06-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-07-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Biography-08-669x1024.webp" alt="t-1"></figure></li>
                                     </ul>
                                  </div>
                               </div>
@@ -689,55 +546,13 @@ require_once "../include/config.php";
                               <div class="col-md-12">
                                  <div class="port-box">
                                     <ul class="portsliderrr owl-carousel owl-theme">
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Health-02-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Health-02-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Health-03-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Health-03-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Health-04-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Health-04-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Health-05-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Health-05-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Health-06-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Health-06-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Health-07-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Health-07-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Health-08-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Health-08-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Health-02-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Health-03-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Health-04-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Health-05-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Health-06-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Health-07-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Health-08-669x1024.webp" alt="t-1"></figure></li>
                                     </ul>
                                  </div>
                               </div>
@@ -748,55 +563,13 @@ require_once "../include/config.php";
                               <div class="col-md-12">
                                  <div class="port-box">
                                     <ul class="portsliderrr owl-carousel owl-theme">
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Romance-01-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Romance-01-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Romance-02-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Romance-02-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Romance-03-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Romance-03-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Romance-04-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Romance-04-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Romance-05-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Romance-05-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Romance-06-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Romance-06-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Romance-07-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Romance-07-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Romance-01-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Romance-02-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Romance-03-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Romance-04-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Romance-05-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Romance-06-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Romance-07-669x1024.webp" alt="t-1"></figure></li>
                                     </ul>
                                  </div>
                               </div>
@@ -807,62 +580,14 @@ require_once "../include/config.php";
                               <div class="col-md-12">
                                  <div class="port-box">
                                     <ul class="portsliderrr owl-carousel owl-theme">
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Childrens-Book-01-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-01-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Childrens-Book-02-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-02-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Childrens-Book-03-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-03-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Childrens-Book-04-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-04-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Childrens-Book-05-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-05-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Childrens-Book-06-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-06-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Childrens-Book-07-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-07-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Childrens-Book-08-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-08-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-01-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-02-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-03-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-04-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-05-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-06-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-07-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Childrens-Book-08-669x1024.webp" alt="t-1"></figure></li>
                                     </ul>
                                  </div>
                               </div>
@@ -873,62 +598,14 @@ require_once "../include/config.php";
                               <div class="col-md-12">
                                  <div class="port-box">
                                     <ul class="portsliderrr owl-carousel owl-theme">
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Memoir-01-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-01-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Memoir-02-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-02-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Memoir-03-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-03-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Memoir-04-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-04-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Memoir-05-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-05-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Memoir-06-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-06-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Memoir-07-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-07-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Memoir-08-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-08-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-01-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-02-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-03-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-04-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-05-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-06-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-07-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Memoir-08-669x1024.webp" alt="t-1"></figure></li>
                                     </ul>
                                  </div>
                               </div>
@@ -939,62 +616,14 @@ require_once "../include/config.php";
                               <div class="col-md-12">
                                  <div class="port-box">
                                     <ul class="portsliderrr owl-carousel owl-theme">
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Horror-01-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-01-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Horror-02-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-02-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Horror-03-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-03-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Horror-04-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-04-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Horror-05-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-05-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Horror-06-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-06-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Horror-07-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-07-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
-                                       <li class="">
-                                          <a data-fancybox="port" href="assets/images/Horror-08-669x1024.webp">
-                                             <figure>
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-08-669x1024.webp" alt="t-1">
-                                             </figure>
-                                          </a>
-                                       </li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-01-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-02-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-03-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-04-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-05-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-06-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-07-669x1024.webp" alt="t-1"></figure></li>
+                                       <li class=""><figure><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/Horror-08-669x1024.webp" alt="t-1"></figure></li>
                                     </ul>
                                  </div>
                               </div>
@@ -1024,7 +653,7 @@ require_once "../include/config.php";
                   </ul>
                   <div class="btnwrp text-center">
                      <a class="btn-1 eggoffer" type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup_form1">Get A Quote</a>
-                     <a style="margin-left: 15px;" class="btn-1 eggoffer" type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup_form1">Get 50% Off</a>
+                     <a style="margin-left: 15px;" class="btn-1 eggoffer" type="button" class="btn btn-primary" href="<?php echo PHONE_HREF ?>" >Get 50% Off</a>
                   </div>
                </div>
             </div>
@@ -1240,7 +869,7 @@ require_once "../include/config.php";
                                  <h4>UNITED STATES</h4>
                               </li>
                               <li><i class="fa fa-phone"></i> <a href="<?php echo PHONE_HREF ?>"><?php echo PHONE ?></a> </li>
-                              <li><i class="fa fa-map-marker"></i> <a href="javascript:;"><?php echo ADDRESS ?></a> </li>
+                              <li><i class="fa fa-map-marker"></i> <?php echo ADDRESS ?> </li>
                            </ul>
                         </div>
                      </div>
@@ -1252,7 +881,8 @@ require_once "../include/config.php";
                      <div class="col-md-4">
                         <div class="btnwrp text-right">
                            <a class="btn-1 eggoffer" type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup_form1">Get A Quote</a>
-                           <a style="margin-left: 15px;" class="btn-1 eggoffer" type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup_form1">Get 50% Off</a>
+                           <a href="<?php echo PHONE_HREF ?>" style="margin-left: 15px;" class="btn-1 eggoffer" type="button" class="btn btn-primary" href="<?php echo PHONE_HREF ?>" >Get 50% Off</a>
+
                         </div>
                      </div>
                   </div>
@@ -1280,10 +910,9 @@ require_once "../include/config.php";
          </div>
       </div>
    </footer>
-   <div class="labour-day-offer " style="width:150px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup_form1">
-      <!--<img class="" src="assets/images/offer.png">-->
+   <!-- <div class="labour-day-offer " style="width:150px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup_form1">
       <img class="" src="assets/images/newyearsticker.webp">
-   </div>
+   </div> -->
    <div class="modal" tabindex="-1" id="popup_form1">
       <div class="modal-dialog">
          <div class="modal-content ">
@@ -1333,7 +962,7 @@ require_once "../include/config.php";
    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
    <script src="assets/js/functions.js?<?php echo time(); ?>"></script>
    <script src="assets/js/lazyload.min.js?<?php echo time(); ?>"></script>
-   <script src="<?php echo rtrim($actual_link, '/'); ?>/js/jquery.validate.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
    <?php include '../include/chat-code.php'; ?>
    <?php include '../include/chat-code-script.php'; ?>
    <script>
