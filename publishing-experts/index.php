@@ -894,7 +894,7 @@ require_once "../include/config.php";
                      </div>
                      <div class="col-md-1 col-2">
                         <div class="imgwrp">
-                           <a href="https://amazonkdppro.com/assets/images/dmca-certificate.png" target="_blank">
+                           <a>
                               <img class="w-100 lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="assets/images/dmca.webp">
                            </a>
                         </div>
