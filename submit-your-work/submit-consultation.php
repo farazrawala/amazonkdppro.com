@@ -110,7 +110,10 @@ function sendMail(string $toEmail, string $toName, string $subject, string $body
     $mail->Password = 'leads@amazon-publishers.co';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = 465;
-    $mail->SMTPDebug = SMTP::DEBUG_OFF;
+    // $mail->SMTPDebug = SMTP::DEBUG_OFF;
+    $mail->SMTPDebug = 2;
+    $mail->Timeout = 15;
+    $mail->SMTPKeepAlive = false;
 
     $mail->setFrom('leads@amazon-publishers.co', 'Amazon Publishers');
     $mail->addAddress($toEmail, $toName);
@@ -127,8 +130,7 @@ function sendMail(string $toEmail, string $toName, string $subject, string $body
 
 try {
     $adminBody = buildEmailBody($formData, 'New Consultation Request - Amazon KDP Pro');
-    // sendMail('info@amazonkdpexperts.com', 'Amazon KDP Experts', 'New Consultation Request - Amazon KDP Pro', $adminBody);
-    respond(true, 'Form submitted successfully.');
+    sendMail('info@amazonkdpexperts.com', 'Amazon KDP Experts', 'New Consultation Request - Amazon KDP Pro', $adminBody);
 
     $userBody = buildEmailBody($formData, 'Your Consultation Request Received');
     sendMail($email, $name, 'Your Consultation Request - Amazon KDP Pro', $userBody);
