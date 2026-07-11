@@ -101,22 +101,35 @@ function buildEmailBody(array $formData, string $heading): string
 
 function sendMail(string $toEmail, string $toName, string $subject, string $body): void
 {
+    $smtpHost = 'smtp.gmail.com';
+    $smtpPort = 465;
+    $smtpUser = 'travisarthurkdp@gmail.com';
+    $smtpPass = 'mbkr dngi cbzt elvr';
+
     $mail = new PHPMailer(true);
 
     $mail->isSMTP();
-    $mail->Host = 'mail.amazon-publishers.co';
+    $mail->Host = $smtpHost;
     $mail->SMTPAuth = true;
-    $mail->Username = 'leads@amazon-publishers.co';
-    $mail->Password = 'leads@amazon-publishers.co';
+    $mail->Username = $smtpUser;
+    $mail->Password = $smtpPass;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port = 465;
-    // $mail->SMTPDebug = SMTP::DEBUG_OFF;
-    $mail->SMTPDebug = 2;
-    $mail->Timeout = 15;
+    $mail->Port = $smtpPort;
+
+    $mail->SMTPDebug = SMTP::DEBUG_OFF;
+    $mail->Timeout = 30;
     $mail->SMTPKeepAlive = false;
 
-    $mail->setFrom('leads@amazon-publishers.co', 'Amazon Publishers');
-    $mail->addAddress($toEmail, $toName);
+    $mail->setFrom($smtpUser, 'Amazon KDP Pro - Publishing Experts');
+
+    // Support multiple recipients separated by commas
+    foreach (explode(',', $toEmail) as $address) {
+        $address = trim($address);
+        if (!empty($address)) {
+            $mail->addAddress($address);
+        }
+    }
+
     $mail->isHTML(true);
     $mail->Subject = $subject;
     $mail->Body = $body;
