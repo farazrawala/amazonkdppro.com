@@ -270,7 +270,7 @@ function sendMail(string $toEmail, string $toName, string $subject, string $body
 
 try {
     $adminBody = buildEmailBody($formData, 'New Manuscript Submission - Amazon KDP Pro');
-    sendMail('info@amazonkdpexperts.com, johndavid78663@gmail.com', 'Amazon KDP Experts', 'New Manuscript Submission - Amazon KDP Pro', $adminBody);
+    sendMail('johndavid78663@gmail.com', 'Amazon KDP Experts', 'New Manuscript Submission - Amazon KDP Pro', $adminBody);
 
     $userBody = buildEmailBody($formData, 'Your Manuscript Submission Received');
     sendMail($email, trim($_POST['firstName'] . ' ' . $_POST['lastName']), 'Your Manuscript Submission - Amazon KDP Pro', $userBody);
