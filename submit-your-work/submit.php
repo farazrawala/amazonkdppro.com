@@ -103,14 +103,14 @@ if ($hasManuscript) {
 
     if ($fileError !== UPLOAD_ERR_OK) {
         $uploadErrors = [
-            UPLOAD_ERR_INI_SIZE => 'File exceeds server upload_max_filesize limit.',
+            UPLOAD_ERR_INI_SIZE => 'File exceeds server upload limit (upload_max_filesize). Please upload a file under 20MB, or ask hosting to raise the PHP upload limit.',
             UPLOAD_ERR_FORM_SIZE => 'File exceeds form MAX_FILE_SIZE limit.',
             UPLOAD_ERR_PARTIAL => 'File was only partially uploaded. Please try again.',
             UPLOAD_ERR_NO_TMP_DIR => 'Server missing a temporary upload folder.',
             UPLOAD_ERR_CANT_WRITE => 'Server failed to write the uploaded file.',
             UPLOAD_ERR_EXTENSION => 'A PHP extension blocked the file upload.',
         ];
-        respond(false, $uploadErrors[$fileError] ?? ('File upload failed (error code ' . $fileError . ').'), 422);
+        respond(false, $uploadErrors[$fileError] ?? ('File upload failed (error code ' . $fileError . '). Current PHP limit: ' . ini_get('upload_max_filesize')), 422);
     }
 
     $allowedExtensions = ['pdf', 'doc', 'docx', 'txt'];
