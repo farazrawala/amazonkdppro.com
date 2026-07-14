@@ -102,33 +102,56 @@ if ($hasManuscript) {
     $file = $_FILES['manuscript'];
 
     if ($fileError !== UPLOAD_ERR_OK) {
-        respond(false, 'File upload failed. Please try again.', 422);
+        $uploadErrors = [
+            UPLOAD_ERR_INI_SIZE => 'File exceeds server upload_max_filesize limit.',
+            UPLOAD_ERR_FORM_SIZE => 'File exceeds form MAX_FILE_SIZE limit.',
+            UPLOAD_ERR_PARTIAL => 'File was only partially uploaded. Please try again.',
+            UPLOAD_ERR_NO_TMP_DIR => 'Server missing a temporary upload folder.',
+            UPLOAD_ERR_CANT_WRITE => 'Server failed to write the uploaded file.',
+            UPLOAD_ERR_EXTENSION => 'A PHP extension blocked the file upload.',
+        ];
+        respond(false, $uploadErrors[$fileError] ?? ('File upload failed (error code ' . $fileError . ').'), 422);
     }
 
     $allowedExtensions = ['pdf', 'doc', 'docx', 'txt'];
     $maxSize = 10 * 1024 * 1024;
-    $originalName = $file['name'];
+    $originalName = (string) ($file['name'] ?? '');
     $extension = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
 
-    if (!in_array($extension, $allowedExtensions, true)) {
-        respond(false, 'Invalid file type. Allowed: PDF, DOC, DOCX, TXT.', 422);
+    if ($extension === '' || !in_array($extension, $allowedExtensions, true)) {
+        respond(false, 'Invalid file type "' . htmlspecialchars($extension ?: 'unknown') . '". Allowed: PDF, DOC, DOCX, TXT.', 422);
     }
 
-    if ($file['size'] > $maxSize) {
-        respond(false, 'File size must be less than 10MB.', 422);
+    if ((int) ($file['size'] ?? 0) <= 0) {
+        respond(false, 'Uploaded file is empty. Please choose another file.', 422);
+    }
+
+    if ((int) $file['size'] > $maxSize) {
+        respond(false, 'File size must be less than 10MB. Your file is about ' . round(((int) $file['size']) / 1048576, 2) . 'MB.', 422);
+    }
+
+    if (empty($file['tmp_name']) || !is_uploaded_file($file['tmp_name'])) {
+        respond(false, 'Temporary upload file missing. Please try again.', 422);
     }
 
     $uploadDir = __DIR__ . '/uploads/manuscripts/';
-    if (!is_dir($uploadDir) && !mkdir($uploadDir, 0755, true)) {
+    if (!is_dir($uploadDir) && !mkdir($uploadDir, 0755, true) && !is_dir($uploadDir)) {
         respond(false, 'Unable to create upload directory.', 500);
     }
 
+    if (!is_writable($uploadDir)) {
+        respond(false, 'Upload directory is not writable on the server.', 500);
+    }
+
     $safeBaseName = preg_replace('/[^a-zA-Z0-9_-]/', '_', pathinfo($originalName, PATHINFO_FILENAME));
+    if ($safeBaseName === '' || $safeBaseName === null) {
+        $safeBaseName = 'manuscript';
+    }
     $storedName = date('Ymd_His') . '_' . uniqid() . '_' . $safeBaseName . '.' . $extension;
     $destination = $uploadDir . $storedName;
 
     if (!move_uploaded_file($file['tmp_name'], $destination)) {
-        respond(false, 'Failed to save uploaded file.', 500);
+        respond(false, 'Failed to save uploaded file to server storage.', 500);
     }
 
     $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';

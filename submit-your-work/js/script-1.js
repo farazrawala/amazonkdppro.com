@@ -1,12 +1,52 @@
-
-       document.querySelectorAll('.file-upload-wrapper').forEach(wrapper => {
+document.querySelectorAll('.file-upload-wrapper').forEach(wrapper => {
     const fileInput = wrapper.querySelector('.file-input');
     const fileUploadLabel = wrapper.querySelector('.file-upload-label');
     const fileSelected = wrapper.querySelector('.file-selected');
     const fileName = wrapper.querySelector('.file-name');
     const fileRemove = wrapper.querySelector('.file-remove');
+    const allowedTypes = ['.pdf', '.doc', '.docx', '.txt'];
 
-    // Change event
+    function getExtension(name) {
+        const parts = String(name || '').toLowerCase().split('.');
+        return parts.length > 1 ? '.' + parts.pop() : '';
+    }
+
+    function assignFile(file) {
+        try {
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(file);
+            fileInput.files = dataTransfer.files;
+        } catch (err) {
+            // Fallback for older browsers; change event may still carry the file
+            console.warn('Could not assign dropped file via DataTransfer', err);
+        }
+    }
+
+    function showSelectedFile(file) {
+        const maxSize = 10 * 1024 * 1024; // 10MB
+        if (file.size > maxSize) {
+            alert('File size must be less than 10MB');
+            fileInput.value = '';
+            fileUploadLabel.style.display = 'flex';
+            fileSelected.style.display = 'none';
+            return false;
+        }
+
+        const extension = getExtension(file.name);
+        if (!allowedTypes.includes(extension)) {
+            alert('Please select a valid file type (PDF, DOC, DOCX, TXT)');
+            fileInput.value = '';
+            fileUploadLabel.style.display = 'flex';
+            fileSelected.style.display = 'none';
+            return false;
+        }
+
+        fileName.textContent = file.name + ' (' + (file.size / (1024 * 1024)).toFixed(2) + ' MB)';
+        fileUploadLabel.style.display = 'none';
+        fileSelected.style.display = 'flex';
+        return true;
+    }
+
     fileInput.addEventListener('change', function (e) {
         const file = e.target.files[0];
         if (file) {
@@ -14,53 +54,43 @@
         }
     });
 
-    // Drag & drop
     wrapper.addEventListener('dragover', function (e) {
         e.preventDefault();
+        e.stopPropagation();
         wrapper.classList.add('dragover');
     });
 
     wrapper.addEventListener('dragleave', function (e) {
         e.preventDefault();
+        e.stopPropagation();
         wrapper.classList.remove('dragover');
     });
 
     wrapper.addEventListener('drop', function (e) {
         e.preventDefault();
+        e.stopPropagation();
         wrapper.classList.remove('dragover');
 
         const files = e.dataTransfer.files;
-        if (files.length > 0) {
-            const file = files[0];
-            const allowedTypes = ['.pdf', '.doc', '.docx', '.txt'];
-            const fileExtension = '.' + file.name.split('.').pop().toLowerCase();
-
-            if (allowedTypes.includes(fileExtension)) {
-                fileInput.files = files;
-                showSelectedFile(file);
-            } else {
-                alert('Please select a valid file type (PDF, DOC, DOCX, TXT)');
-            }
-        }
-    });
-
-    // Show selected file
-    function showSelectedFile(file) {
-        const maxSize = 10 * 1024 * 1024; // 10MB
-        if (file.size > maxSize) {
-            alert('File size must be less than 10MB');
-            fileInput.value = '';
+        if (!files.length) {
             return;
         }
 
-        fileName.textContent = file.name;
-        fileUploadLabel.style.display = 'none';
-        fileSelected.style.display = 'flex';
-    }
+        const file = files[0];
+        if (!allowedTypes.includes(getExtension(file.name))) {
+            alert('Please select a valid file type (PDF, DOC, DOCX, TXT)');
+            return;
+        }
 
-    // Remove file
-    fileRemove.addEventListener('click', function () {
+        assignFile(file);
+        showSelectedFile(file);
+    });
+
+    fileRemove.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
         fileInput.value = '';
+        fileName.textContent = '';
         fileUploadLabel.style.display = 'flex';
         fileSelected.style.display = 'none';
     });

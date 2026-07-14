@@ -193,6 +193,7 @@ $pageBase = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')
             background: #F9FAFB;
             transition: all 0.3s ease;
             overflow: hidden;
+            min-height: 120px;
         }
 
         .file-upload-wrapper:hover {
@@ -252,6 +253,8 @@ $pageBase = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')
         }
 
         .file-selected {
+            position: relative;
+            z-index: 3;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -286,6 +289,21 @@ $pageBase = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')
             font-weight: 500;
             color: #374151;
             word-break: break-word;
+        }
+
+        .file-remove {
+            position: relative;
+            z-index: 4;
+            margin-left: auto;
+            border: none;
+            background: #fee2e2;
+            color: #b91c1c;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
         }
 
         .file-remove {
@@ -1332,8 +1350,8 @@ $pageBase = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')
                             Manuscript Upload
                         </h3>
                         <div class="file-upload-wrapper">
-                            <input type="file" name="manuscript" class="file-input" accept=".pdf,.doc,.docx,.txt">
-                            <label class="file-upload-label">
+                            <input type="file" id="manuscriptFile" name="manuscript" class="file-input" accept=".pdf,.doc,.docx,.txt,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain">
+                            <label class="file-upload-label" for="manuscriptFile">
                                 <i class="fas fa-cloud-upload-alt"></i>
                                 <span class="file-text">Choose File</span>
                                 <span class="file-subtext">PDF, DOC, DOCX, TXT (Max 10MB) — Optional</span>
@@ -1677,8 +1695,9 @@ $pageBase = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')
 
                     const formData = new FormData(manuscriptForm);
                     const manuscriptFile = manuscriptForm.querySelector('[name="manuscript"]');
-                    if (manuscriptFile && (!manuscriptFile.files || !manuscriptFile.files.length)) {
-                        formData.delete('manuscript');
+                    formData.delete('manuscript');
+                    if (manuscriptFile && manuscriptFile.files && manuscriptFile.files.length) {
+                        formData.append('manuscript', manuscriptFile.files[0], manuscriptFile.files[0].name);
                     }
 
                     fetch(getFormEndpoint('submit.php'), {
